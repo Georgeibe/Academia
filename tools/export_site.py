@@ -78,7 +78,7 @@ for wid, w, lem, pt, pc in c.execute('select wordID,word,lemma,parsetxt,parsecod
 pages = []
 for (ch,) in c.execute('select distinct chapter from verses order by chapter'):
     secs = []
-    for vs, text in c.execute('select verse,text from verses where chapter=? order by verse', (ch,)):
+    for vs, text in c.execute('select verse,text from verses where chapter=? order by rowid', (ch,)):
         secs.append([vs, text])
     pages.append([ch, secs])
 # word id ranges per section, from the .grk-equivalent ordering: words are in text order

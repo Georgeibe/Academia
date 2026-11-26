@@ -37,7 +37,10 @@ for tag, i1, i2, j1, j2 in sm.get_opcodes():
             if g['postag'][0] != t['postag'][0]: diffs['part of speech'] += 1
             elif g['lemma'] != lem: diffs['lemma'] += 1
             else: diffs['parsing'] += 1
-        g['lemma'], g['postag'] = lem, t['postag']
+        # Gorman tags most particles/conjunctions as adverbs and demonstratives/numerals as adjectives;
+        # GLAUx's finer labels read better for learners, so keep them in those cases.
+        keep = g['postag'][0] in 'cgpm' and t['postag'][0] in 'da'
+        g['lemma'], g['postag'] = lem, (g['postag'] if keep else t['postag'])
         g['source'] = 'gorman'
         matched += 1
 

@@ -4,7 +4,7 @@ A small static website for reading Ancient Greek texts. Tap any word to see its 
 
 Texts:
 - Plato, *Apology of Socrates* (Stephanus pages 17–42), with English and Russian translations.
-- Xenophon, *Anabasis*, Book I (chapters 1–10), with English translation. More books will follow.
+- Xenophon, *Anabasis*, Books I–VII, with English translation.
 
 ## Publish on GitHub Pages
 1. Create a new repository on GitHub and upload everything in this folder (keep the folder structure).
@@ -19,13 +19,13 @@ The site is plain HTML, CSS and JavaScript with no build step. To try it on your
 - `tools/`: scripts that produce the data.
   - `build.py` converts a GLAUx text to a word database.
   - `export_site.py` turns that database into the website JSON.
-  - `merge_gorman.py` replaces GLAUx's automatic parsing with Vanessa Gorman's hand-checked treebank where one exists (used for Anabasis I).
+  - `merge_gorman.py` replaces GLAUx's automatic parsing with Vanessa Gorman's hand-checked treebank where one exists (used for Anabasis I and III; the other books use GLAUx's automatic parsing).
   - `extract_perseus_sections.py` extracts a Perseus translation divided by book/chapter/section (Brownson's Anabasis).
   - `extract_fowler.py` extracts the English translation of the Apology, and `extract_solovyov.py` the Russian one (from a PDF of the plato.today page), both split by Stephanus section.
   - `glosses.tsv` and `glosses_ru.tsv` are the hand-written English and Russian meanings. Edit them to fix a meaning.
   - `apology.db` is the converted Apology. To fix a Russian meaning, edit `glosses_ru.tsv` and run:
     `python3 tools/export_site.py tools/apology.db tools/glosses_ru.tsv tools/eng_fowler_apology.json tools/rus_solovyov_apology.json data/apology.json apology stephanus tools/kat_berdzenishvili_apology.json`
-    For Anabasis I: `python3 tools/export_site.py tools/anabasis1.db tools/glosses_ru.tsv tools/eng_brownson_anabasis1.json - data/anabasis-1.json anabasis section`
+    For Anabasis book N (1–7): `python3 tools/export_site.py tools/anabasisN.db tools/glosses_ru.tsv tools/eng_brownson_anabasisN.json - data/anabasis-N.json anabasis section`
 
 ## Adding a text
 1. Run `tools/build.py` on a GLAUx XML file.

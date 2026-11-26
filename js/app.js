@@ -7,7 +7,7 @@ const TEXTS = [
     unit: { en: 'Stephanus page', ru: 'страница Стефана', ka: 'სტეფანუსის გვერდი' } },
   { id: 'anabasis', gr: 'Κύρου Ἀνάβασις', title: { en: 'Anabasis', ru: 'Анабасис', ka: 'ანაბასისი' },
     author: { en: 'Xenophon', ru: 'Ксенофонт', ka: 'ქსენოფონტი' }, unit: { en: 'Chapter', ru: 'Глава', ka: 'თავი' },
-    books: { 1: 'data/anabasis-1.json' }, nbooks: 7 },
+    books: { 1: 'data/anabasis-1.json', 2: 'data/anabasis-2.json', 3: 'data/anabasis-3.json', 4: 'data/anabasis-4.json', 5: 'data/anabasis-5.json', 6: 'data/anabasis-6.json', 7: 'data/anabasis-7.json' }, nbooks: 7 },
 ];
 const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
 
@@ -120,7 +120,7 @@ async function reader(id, b, pg) {
   const file = x.books ? x.books[b] : x.file;
   if (!cache[file]) {
     $('app').innerHTML = `<p class="wrap empty">${esc(t().loading)}</p>`;
-    try { cache[file] = await (await fetch(file + '?v=20261126b')).json(); }
+    try { cache[file] = await (await fetch(file + '?v=20261126c')).json(); }
     catch (e) { $('app').innerHTML = `<p class="wrap empty">${esc(t().failed)}</p>`; return; }
   }
   D = cache[file]; text = x; book = b;
