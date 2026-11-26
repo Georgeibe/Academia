@@ -71,7 +71,7 @@ main.read{padding:18px 0 260px}
 .tr{grid-column:2;margin:4px 0 6px;font-size:16px;line-height:1.6;color:var(--mute);border-left:3px solid var(--line);padding-left:12px;max-width:70ch}
 .w{cursor:pointer;border-radius:4px}
 .w:hover{background:var(--soft)}
-.vb{color:var(--c);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.vb{color:var(--c);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.3em;text-decoration-skip-ink:none}
 .vb.off{color:inherit;text-decoration:none}
 .vb.ptc{font-style:italic;font-weight:700;text-decoration:none}
 .vb.inf{text-decoration:line-through;text-decoration-thickness:2px}
