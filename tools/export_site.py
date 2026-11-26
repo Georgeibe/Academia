@@ -1,6 +1,6 @@
 """Export a converted text (SQLite from build.py) to the website's JSON.
 
-Usage: python3 export_site.py BOOK.db glosses_ru.tsv eng.json rus.json OUT.json [ID] [SCHEME]
+Usage: python3 export_site.py BOOK.db glosses_ru.tsv eng.json rus.json OUT.json [ID] [SCHEME] [kat.json]
 (use - for a missing translation; SCHEME is 'stephanus' (17a, 17b ...) or 'section' (1.1, 1.2 ...))
 """
 import sqlite3, json, re, sys, csv
@@ -12,6 +12,7 @@ c = sqlite3.connect(db)
 RU = {r[0]: r[1] for r in csv.reader(open(ru_path, encoding='utf8'), delimiter='\t') if r and not r[0].startswith('#')}
 ENG = json.load(open(eng_path, encoding='utf8')) if eng_path != '-' else {}
 RUS = json.load(open(rus_path, encoding='utf8')) if rus_path != '-' else {}
+KAT = json.load(open(sys.argv[8], encoding='utf8')) if len(sys.argv) > 8 and sys.argv[8] != '-' else {}
 
 POS_RU = {'noun': 'существительное', 'adjective': 'прилагательное', 'verb': 'глагол', 'adverb': 'наречие',
           'conjunction': 'союз', 'preposition': 'предлог', 'particle': 'частица', 'interjection': 'междометие',
@@ -93,13 +94,14 @@ for ch, secs in pages:
         s.append([ids[0], ids[-1]] if ids else [0, -1])
 assert wi == len(W), (wi, len(W))
 
-tr = {'en': {}, 'ru': {}}
+tr = {'en': {}, 'ru': {}, 'ka': {}}
 for ch, secs in pages:
     for vs, text, rng in secs:
         key = f'{ch}{"abcde"[vs-1]}' if SCHEME == 'stephanus' else f'{ch}.{vs}'
         if key in ENG: tr['en'][key] = ENG[key]
         if key in RUS: tr['ru'][key] = RUS[key]
+        if key in KAT: tr['ka'][key] = KAT[key]
 
 data = {'id': TEXT_ID, 'scheme': SCHEME, 'pages': pages, 'W': W, 'L': L, 'P': P, 'tr': tr}
 json.dump(data, open(out, 'w', encoding='utf8'), ensure_ascii=False, separators=(',', ':'))
-print('words', len(W), 'lemmas', len(L), 'parse forms', len(P), 'en sections', len(tr['en']), 'ru sections', len(tr['ru']))
+print('words', len(W), 'lemmas', len(L), 'parse forms', len(P), 'en sections', len(tr['en']), 'ru sections', len(tr['ru']), 'ka sections', len(tr['ka']))

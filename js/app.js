@@ -19,13 +19,13 @@ const T = {
     open: 'Read', soon: 'Coming soon', how_h: 'How to read',
     how_p: 'Underlined words are finite verbs, bold italic words are participles and struck-through words are infinitives. The colour shows the tense; tap a colour to switch it off. Use the language switch at the top for English or Russian meanings.',
     back: '← Library', tense: { P: 'Present', I: 'Imperfect', F: 'Future', A: 'Aorist', X: 'Perfect', Y: 'Pluperfect' },
-    trans: 'Translation', none: 'None', en: 'English', ru: 'Russian', ru_soon: 'Russian (coming soon)',
+    trans: 'Translation', none: 'None', en: 'English', ru: 'Russian', ka: 'Georgian', ru_soon: 'Russian (coming soon)',
     vocab: 'Page vocabulary', vocab_h: p => `Words on this page (${p})`,
     times: n => `${n}× in this text`, same: 'Mark all forms on this page', unsame: 'Clear marks',
     prev: '←', next: '→', loading: 'Loading the text…', failed: 'The text could not be loaded.',
     book: 'Book', books_ready: n => `Book${n > 1 ? 's' : ''} ${n === 1 ? 'I' : 'I–' + ROMAN[n]} available`,
     legend: {
-      apology: 'Text, lemmas and parsing: GLAUx corpus (A. Keersmaekers, CC BY-SA 4.0), based on the Perseus Digital Library. English translation: H. N. Fowler (1914), Perseus, CC BY-SA. Russian translation: M. S. Solovyov (1899–1903), public domain. Meanings: Greek Study App dictionary (J. Jansen) and written for this site.',
+      apology: 'Text, lemmas and parsing: GLAUx corpus (A. Keersmaekers, CC BY-SA 4.0), based on the Perseus Digital Library. English translation: H. N. Fowler (1914), Perseus, CC BY-SA. Russian translation: M. S. Solovyov (1899–1903), public domain. Georgian translation: Levan Berdzenishvili, used with the translator’s permission. Meanings: Greek Study App dictionary (J. Jansen) and written for this site.',
       anabasis: 'Text: Perseus Digital Library. Lemmas and parsing: GLAUx corpus (A. Keersmaekers, CC BY-SA 4.0), corrected with V. Gorman\'s hand-checked treebank. English translation: C. L. Brownson (1922), Perseus, CC BY-SA. Meanings: Greek Study App dictionary (J. Jansen) and written for this site.',
     },
     foot: 'Open project. Corrections are welcome on GitHub.',
@@ -36,13 +36,13 @@ const T = {
     open: 'Читать', soon: 'Скоро', how_h: 'Как читать',
     how_p: 'Подчёркнуты личные формы глагола, жирным курсивом выделены причастия, зачёркнуты инфинитивы. Цвет показывает время; нажмите на цвет, чтобы его отключить. Переключатель языка вверху меняет значения слов на английские или русские.',
     back: '← Библиотека', tense: { P: 'Настоящее', I: 'Имперфект', F: 'Будущее', A: 'Аорист', X: 'Перфект', Y: 'Плюсквамперфект' },
-    trans: 'Перевод', none: 'Нет', en: 'Английский', ru: 'Русский', ru_soon: 'Русский (скоро)',
+    trans: 'Перевод', none: 'Нет', en: 'Английский', ru: 'Русский', ka: 'Грузинский', ru_soon: 'Русский (скоро)',
     vocab: 'Слова страницы', vocab_h: p => `Слова на этой странице (${p})`,
     times: n => `${n}× в этом тексте`, same: 'Отметить все формы на странице', unsame: 'Снять отметки',
     prev: '←', next: '→', loading: 'Загрузка текста…', failed: 'Не удалось загрузить текст.',
     book: 'Книга', books_ready: n => n === 1 ? 'Доступна книга I' : `Доступны книги I–${ROMAN[n]}`,
     legend: {
-      apology: 'Текст, леммы и разбор: корпус GLAUx (A. Keersmaekers, CC BY-SA 4.0) на основе Perseus Digital Library. Английский перевод: H. N. Fowler (1914), Perseus, CC BY-SA. Русский перевод: М. С. Соловьёв (1899–1903), общественное достояние. Значения: словарь Greek Study App (J. Jansen) и составленные для этого сайта.',
+      apology: 'Текст, леммы и разбор: корпус GLAUx (A. Keersmaekers, CC BY-SA 4.0) на основе Perseus Digital Library. Английский перевод: H. N. Fowler (1914), Perseus, CC BY-SA. Русский перевод: М. С. Соловьёв (1899–1903), общественное достояние. Грузинский перевод: Леван Бердзенишвили, публикуется с разрешения переводчика. Значения: словарь Greek Study App (J. Jansen) и составленные для этого сайта.',
       anabasis: 'Текст: Perseus Digital Library. Леммы и разбор: корпус GLAUx (A. Keersmaekers, CC BY-SA 4.0), исправленный по размеченному вручную корпусу В. Горман. Английский перевод: C. L. Brownson (1922), Perseus, CC BY-SA. Значения: словарь Greek Study App (J. Jansen) и составленные для этого сайта.',
     },
     foot: 'Открытый проект. Исправления приветствуются на GitHub.',
@@ -111,7 +111,7 @@ async function reader(id, b, pg) {
   S.last[id] = { book: b, page }; save();
   const where = x.books ? `${ROMAN[b]}.${page}` : `${page}`;
   document.title = `${x.title[S.lang]} ${where} · Anagnosis`;
-  const hasRu = Object.keys(D.tr.ru || {}).length > 0, hasEn = Object.keys(D.tr.en || {}).length > 0;
+  const hasRu = Object.keys(D.tr.ru || {}).length > 0, hasEn = Object.keys(D.tr.en || {}).length > 0, hasKa = Object.keys(D.tr.ka || {}).length > 0;
   const bookNav = x.books ? `<nav class="pages books" aria-label="${esc(t().book)}">${Array.from({ length: x.nbooks }, (_, i) => i + 1)
     .map(n => `<button data-b="${n}" aria-current="${n === b}" ${x.books[n] ? '' : 'disabled'}>${esc(t().book)} ${ROMAN[n]}</button>`).join('')}</nav>` : '';
   $('app').innerHTML = `
@@ -124,13 +124,13 @@ async function reader(id, b, pg) {
         <div class="opts">
           <label for="tr">${esc(t().trans)}</label>
           <select id="tr"><option value="none">${esc(t().none)}</option><option value="en" ${hasEn ? '' : 'disabled'}>${esc(t().en)}</option>
-            <option value="ru" ${hasRu ? '' : 'disabled'}>${esc(hasRu ? t().ru : t().ru_soon)}</option></select>
+            <option value="ru" ${hasRu ? '' : 'disabled'}>${esc(hasRu ? t().ru : t().ru_soon)}</option>${hasKa ? `<option value="ka">${esc(t().ka)}</option>` : ''}</select>
           <button class="btn" id="vb" aria-pressed="${S.vocab}">${esc(t().vocab)}</button>
         </div>
       </div>
     </div></div>
     <main class="read wrap" id="text"></main>`;
-  $('tr').value = (S.tr === 'ru' && !hasRu) || (S.tr === 'en' && !hasEn) ? 'none' : S.tr;
+  $('tr').value = (S.tr === 'ru' && !hasRu) || (S.tr === 'en' && !hasEn) || (S.tr === 'ka' && !hasKa) ? 'none' : S.tr;
   renderText();
   document.querySelectorAll('.pages [aria-current=true]').forEach(c => c.scrollIntoView({ inline: 'center', block: 'nearest' }));
 }

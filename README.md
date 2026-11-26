@@ -24,7 +24,7 @@ The site is plain HTML, CSS and JavaScript with no build step. To try it on your
   - `extract_fowler.py` extracts the English translation of the Apology, and `extract_solovyov.py` the Russian one (from a PDF of the plato.today page), both split by Stephanus section.
   - `glosses.tsv` and `glosses_ru.tsv` are the hand-written English and Russian meanings. Edit them to fix a meaning.
   - `apology.db` is the converted Apology. To fix a Russian meaning, edit `glosses_ru.tsv` and run:
-    `python3 tools/export_site.py tools/apology.db tools/glosses_ru.tsv tools/eng_fowler_apology.json tools/rus_solovyov_apology.json data/apology.json apology stephanus`
+    `python3 tools/export_site.py tools/apology.db tools/glosses_ru.tsv tools/eng_fowler_apology.json tools/rus_solovyov_apology.json data/apology.json apology stephanus tools/kat_berdzenishvili_apology.json`
     For Anabasis I: `python3 tools/export_site.py tools/anabasis1.db tools/glosses_ru.tsv tools/eng_brownson_anabasis1.json - data/anabasis-1.json anabasis section`
 
 ## Adding a text
@@ -38,6 +38,7 @@ The site is plain HTML, CSS and JavaScript with no build step. To try it on your
 - Anabasis: Greek text from Perseus; parsing from GLAUx, corrected with [Vanessa Gorman's treebank](https://github.com/vgorman1/Greek-Dependency-Trees). English translation: C. L. Brownson (1922), Perseus, CC BY-SA.
 - English translation of the Apology: H. N. Fowler, *Plato in Twelve Volumes* (1914), from [Perseus](https://github.com/PerseusDL/canonical-greekLit), CC BY-SA.
 - Russian translation: M. S. Solovyov, *Творения Платона* (Moscow, 1899–1903), public domain; text as reprinted in Платон, Собр. соч. в 4 т., т. 1 (Moscow: Мысль, 1990), via plato.today. The editorial headings and A. A. Takho-Godi's notes are not included. Section breaks were placed automatically from the Stephanus margin marks and may be off by a phrase.
+- Georgian translation: Levan Berdzenishvili, used with the translator's written permission (26 November 2026). This translation is **not** covered by the site's open licences; please ask the translator before reusing it. The notes and part headings are not included.
 - English meanings: partly from the dictionary of the [Greek Study App](https://github.com/claypotfrog/GNTSP) by Jeff Jansen (GPL-3.0), partly written for this site.
 - Russian meanings: written for this site.
 - Code and data of this site: GPL-3.0 (see `LICENSE`). CC BY-SA 4.0 material can be included in GPL-3.0 works.
