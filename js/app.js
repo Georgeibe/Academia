@@ -120,7 +120,7 @@ async function reader(id, b, pg) {
   const file = x.books ? x.books[b] : x.file;
   if (!cache[file]) {
     $('app').innerHTML = `<p class="wrap empty">${esc(t().loading)}</p>`;
-    try { cache[file] = await (await fetch(file + '?v=20261126c')).json(); }
+    try { cache[file] = await (await fetch(file + '?v=20261126d')).json(); }
     catch (e) { $('app').innerHTML = `<p class="wrap empty">${esc(t().failed)}</p>`; return; }
   }
   D = cache[file]; text = x; book = b;
