@@ -20,7 +20,7 @@ def strip_acc(s):
 # ---------- read GLAUx ----------
 x = open(SRC, encoding='utf8').read()
 W = [dict(re.findall(r'(\w+)="([^"]*)"', w)) for w in re.findall(r'<word ([^>]*)/>', x)]
-W = [w for w in W if 'artificial' not in w]
+W = [w for w in W if 'artificial' not in w and w.get('form') and 'postag' in w]
 # crasis: GLAUx gives the first element as its own token ending in '-' (e.g. 'κα-' + 'κἀγώ').
 # Drop that token and note the crasis on the full word.
 _W = []
@@ -33,10 +33,14 @@ W = _W
 for w in W:
     w['joined'] = w['form'].startswith('-')
     w['form'] = N(w['form']).lstrip('-')
-    w['lemma'] = N(w['lemma'])
+    w['lemma'] = N(re.sub(r'\d+$', '', w['lemma']))
     sec = w.get('div_stephanus_section') or ''
     m = re.match(r'(\d+)([a-e])', sec)
-    w['ch'], w['vs'] = (int(m.group(1)), 'abcde'.index(m.group(2)) + 1) if m else (0, 0)
+    if m:   # Plato: chapter = Stephanus page, verse = section letter
+        w['ch'], w['vs'] = int(m.group(1)), 'abcde'.index(m.group(2)) + 1
+    else:   # book.chapter.section (e.g. Xenophon): chapter = chapter, verse = section
+        m = re.match(r'\d+\.(\d+)\.(\d+)', w.get('div_section', ''))
+        w['ch'], w['vs'] = (int(m.group(1)), int(m.group(2))) if m else (0, 0)
     w['speech'] = w.get('div_speech', '')
 
 # ---------- parsing ----------
@@ -145,6 +149,14 @@ def parse(w):
         return 'I', 'interjection', 'interjection', '', ''
     return 'X', 'particle', 'particle', '', ''
 
+# variant lemmas of the same word -> one dictionary entry
+LEMMAFIX = {'σταθμόν': 'σταθμός', 'ἢ': 'ἤ', 'μὲν': 'μέν', 'μη': 'μή', 'ὅπη': 'ὅπῃ', 'Ἀβροκόμας': 'Ἀβροκόμης',
+            'Ταμῶς': 'Ταμώς', 'Ὀρόντας': 'Ὀρόντης', 'Μαρσύα': 'Μαρσύας', 'Συρηκόσιος': 'Συρακούσιος',
+            'σκευόφορος': 'σκευοφόρος', 'προίημι': 'προΐημι', 'πλησίος': 'πλησίον', 'ἱππικόν': 'ἱππικός',
+            'ἀντίον': 'ἀντίος', 'ὕστερον': 'ὕστερος', 'πότερον': 'πότερος', 'Πύλης': 'Πύλαι', 'μαχέομαι': 'μάχομαι',
+            'σταθμόs': 'σταθμός', 'Κιλίκια': 'Κιλικία'}
+for w in W:
+    w['lemma'] = LEMMAFIX.get(w['lemma'], w['lemma'])
 # known tagging fixes: lemma -> (pos letter, gender) for substantives tagged as adjectives
 NOUNFIX = {'κατήγορος': 'm'}
 # known GLAUx errors at word level: form -> (wrong lemma, right lemma, right postag or None)
@@ -286,6 +298,9 @@ def verb_wrap(w, s):
     V = vc if vc != 'E' else 'M'; T = tn if tn != 'Z' else 'X'
     return f'<V{V}><M{md}><T{T}>{s}</T{T}></M{md}></V{V}>'
 
+STEPH = any(w.get('div_stephanus_section') for w in W)
+lab = lambda vs: 'abcde'[vs - 1] if STEPH else str(vs)
+
 def book_file(kind):
     out = []
     bypage = collections.OrderedDict()
@@ -296,8 +311,8 @@ def book_file(kind):
         meta = ' '.join(f'{ch}:{vs} ' + ' '.join(str(w['id']) for w in ws if not w.get('punct')) for vs, ws in vlist)
         spans = []
         for vs, ws in vlist:
-            num = f'<b><font size="30" color="#969696">{ch}</font><font color="#969696">{"abcde"[vs-1]}</font></b>' if vs == vlist[0][0] \
-                else f'<b><font color="#969696">{"abcde"[vs-1]}</font></b>'
+            num = f'<b><font size="30" color="#969696">{ch}</font><font color="#969696">{lab(vs) if STEPH else ':' + lab(vs)}</font></b>' if vs == vlist[0][0] \
+                else f'<b><font color="#969696">{lab(vs)}</font></b>'
             parts, cur = [], ''
             for w in ws:
                 f = w['form'] if kind == 'grk' else (w['lemma'] if not w.get('punct') else w['form'])

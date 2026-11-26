@@ -2,7 +2,9 @@
 
 A small static website for reading Ancient Greek texts. Tap any word to see its dictionary form, meaning (English or Russian) and full parsing. Verbs are coloured by tense, and a translation can be shown under each section.
 
-First text: Plato, *Apology of Socrates* (Stephanus pages 17–42).
+Texts:
+- Plato, *Apology of Socrates* (Stephanus pages 17–42), with English and Russian translations.
+- Xenophon, *Anabasis*, Book I (chapters 1–10), with English translation. More books will follow.
 
 ## Publish on GitHub Pages
 1. Create a new repository on GitHub and upload everything in this folder (keep the folder structure).
@@ -13,14 +15,17 @@ The site is plain HTML, CSS and JavaScript with no build step. To try it on your
 
 ## Folders
 - `index.html`, `css/`, `js/`: the website.
-- `data/apology.json`: the text, every word's parsing, the dictionary (English and Russian meanings) and the English translation.
+- `data/apology.json`, `data/anabasis-1.json`: each text with every word's parsing, the dictionary (English and Russian meanings) and the translations. Multi-book texts have one file per book.
 - `tools/`: scripts that produce the data.
   - `build.py` converts a GLAUx text to a word database.
   - `export_site.py` turns that database into the website JSON.
-  - `extract_fowler.py` extracts the English translation, and `extract_solovyov.py` the Russian one (from a PDF of the plato.today page), both split by Stephanus section.
+  - `merge_gorman.py` replaces GLAUx's automatic parsing with Vanessa Gorman's hand-checked treebank where one exists (used for Anabasis I).
+  - `extract_perseus_sections.py` extracts a Perseus translation divided by book/chapter/section (Brownson's Anabasis).
+  - `extract_fowler.py` extracts the English translation of the Apology, and `extract_solovyov.py` the Russian one (from a PDF of the plato.today page), both split by Stephanus section.
   - `glosses.tsv` and `glosses_ru.tsv` are the hand-written English and Russian meanings. Edit them to fix a meaning.
   - `apology.db` is the converted Apology. To fix a Russian meaning, edit `glosses_ru.tsv` and run:
-    `python3 tools/export_site.py tools/apology.db tools/glosses_ru.tsv tools/eng_fowler_apology.json tools/rus_solovyov_apology.json data/apology.json`
+    `python3 tools/export_site.py tools/apology.db tools/glosses_ru.tsv tools/eng_fowler_apology.json tools/rus_solovyov_apology.json data/apology.json apology stephanus`
+    For Anabasis I: `python3 tools/export_site.py tools/anabasis1.db tools/glosses_ru.tsv tools/eng_brownson_anabasis1.json - data/anabasis-1.json anabasis section`
 
 ## Adding a text
 1. Run `tools/build.py` on a GLAUx XML file.
@@ -30,7 +35,8 @@ The site is plain HTML, CSS and JavaScript with no build step. To try it on your
 
 ## Sources and licences
 - Greek text, lemmas and parsing: [GLAUx](https://github.com/alekkeersmaekers/glaux) (A. Keersmaekers, KU Leuven), CC BY-SA 4.0. It is based on the [Perseus Digital Library](http://www.perseus.tufts.edu/). For the Apology, the annotation comes from Vanessa Gorman's hand-made treebank.
-- English translation: H. N. Fowler, *Plato in Twelve Volumes* (1914), from [Perseus](https://github.com/PerseusDL/canonical-greekLit), CC BY-SA.
+- Anabasis: Greek text from Perseus; parsing from GLAUx, corrected with [Vanessa Gorman's treebank](https://github.com/vgorman1/Greek-Dependency-Trees). English translation: C. L. Brownson (1922), Perseus, CC BY-SA.
+- English translation of the Apology: H. N. Fowler, *Plato in Twelve Volumes* (1914), from [Perseus](https://github.com/PerseusDL/canonical-greekLit), CC BY-SA.
 - Russian translation: M. S. Solovyov, *Творения Платона* (Moscow, 1899–1903), public domain; text as reprinted in Платон, Собр. соч. в 4 т., т. 1 (Moscow: Мысль, 1990), via plato.today. The editorial headings and A. A. Takho-Godi's notes are not included. Section breaks were placed automatically from the Stephanus margin marks and may be off by a phrase.
 - English meanings: partly from the dictionary of the [Greek Study App](https://github.com/claypotfrog/GNTSP) by Jeff Jansen (GPL-3.0), partly written for this site.
 - Russian meanings: written for this site.
@@ -44,7 +50,6 @@ Corrections and suggestions are welcome as issues or pull requests.
 
 Небольшой статический сайт для чтения древнегреческих текстов. Нажмите на любое слово, чтобы увидеть его словарную форму, значение (по-английски или по-русски) и полный разбор. Глаголы окрашены по времени, под каждым разделом можно показать перевод.
 
-Первый текст: Платон, «Апология Сократа» (страницы Стефана 17–42), с английским переводом Фаулера и русским переводом М. С. Соловьёва.
 
 Публикация на GitHub Pages:
 1. Загрузите эту папку в новый репозиторий.

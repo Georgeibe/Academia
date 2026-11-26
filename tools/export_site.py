@@ -1,9 +1,12 @@
 """Export a converted text (SQLite from build.py) to the website's JSON.
 
-Usage: python3 export_site.py BOOK.db glosses_ru.tsv eng.json rus.json OUT.json   (use - for a missing translation)
+Usage: python3 export_site.py BOOK.db glosses_ru.tsv eng.json rus.json OUT.json [ID] [SCHEME]
+(use - for a missing translation; SCHEME is 'stephanus' (17a, 17b ...) or 'section' (1.1, 1.2 ...))
 """
 import sqlite3, json, re, sys, csv
 db, ru_path, eng_path, rus_path, out = sys.argv[1:6]
+TEXT_ID = sys.argv[6] if len(sys.argv) > 6 else 'apology'
+SCHEME = sys.argv[7] if len(sys.argv) > 7 else 'stephanus'
 c = sqlite3.connect(db)
 
 RU = {r[0]: r[1] for r in csv.reader(open(ru_path, encoding='utf8'), delimiter='\t') if r and not r[0].startswith('#')}
@@ -93,10 +96,10 @@ assert wi == len(W), (wi, len(W))
 tr = {'en': {}, 'ru': {}}
 for ch, secs in pages:
     for vs, text, rng in secs:
-        key = f'{ch}{"abcde"[vs-1]}'
+        key = f'{ch}{"abcde"[vs-1]}' if SCHEME == 'stephanus' else f'{ch}.{vs}'
         if key in ENG: tr['en'][key] = ENG[key]
         if key in RUS: tr['ru'][key] = RUS[key]
 
-data = {'id': 'apology', 'pages': pages, 'W': W, 'L': L, 'P': P, 'tr': tr}
+data = {'id': TEXT_ID, 'scheme': SCHEME, 'pages': pages, 'W': W, 'L': L, 'P': P, 'tr': tr}
 json.dump(data, open(out, 'w', encoding='utf8'), ensure_ascii=False, separators=(',', ':'))
 print('words', len(W), 'lemmas', len(L), 'parse forms', len(P), 'en sections', len(tr['en']), 'ru sections', len(tr['ru']))

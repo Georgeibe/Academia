@@ -50,6 +50,7 @@ button:focus-visible,select:focus-visible,a:focus-visible,.w:focus-visible{outli
 .title h1{font:700 22px/1.2 "Gentium Book Plus",serif;margin:0}
 .pages{display:flex;gap:4px;overflow-x:auto;padding:8px 0;scroll-snap-type:x proximity;scrollbar-width:thin}
 .pages button{flex:none;min-width:44px;height:44px;border:1px solid var(--line);background:none;border-radius:8px;font-weight:600;cursor:pointer;scroll-snap-align:center}
+.pages button:disabled{opacity:.35;cursor:default}
 .pages button[aria-current=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .ctrl{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;padding:0 0 10px}
 .key{display:flex;flex-wrap:wrap;gap:6px}
