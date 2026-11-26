@@ -25,7 +25,7 @@ The site is plain HTML, CSS and JavaScript with no build step. To try it on your
   - `glosses.tsv` and `glosses_ru.tsv` are the hand-written English and Russian meanings. Edit them to fix a meaning.
   - `apology.db` is the converted Apology. To fix a Russian meaning, edit `glosses_ru.tsv` and run:
     `python3 tools/export_site.py tools/apology.db tools/glosses_ru.tsv tools/eng_fowler_apology.json tools/rus_solovyov_apology.json data/apology.json apology stephanus tools/kat_berdzenishvili_apology.json`
-    For Anabasis book N (1–7): `python3 tools/export_site.py tools/anabasisN.db tools/glosses_ru.tsv tools/eng_brownson_anabasisN.json - data/anabasis-N.json anabasis section`
+    For Anabasis book N (1–7): `python3 tools/export_site.py tools/anabasisN.db tools/glosses_ru.tsv tools/eng_brownson_anabasisN.json - data/anabasis-N.json anabasis section` (for book 1 use `tools/rus_anabasis1.json` instead of `-`; it is an experimental translation made for this site)
 
 ## Adding a text
 1. Run `tools/build.py` on a GLAUx XML file.
