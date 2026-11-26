@@ -76,7 +76,8 @@ let D = null, text = null, book = null, page = null, sel = null, sameLem = null;
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const t = () => T[S.lang];
+if (!T[S.lang]) S.lang = 'en';
+const t = () => T[S.lang] || T.en;
 const ready = x => !!(x.file || x.books);
 const nBooks = x => x.books ? Object.keys(x.books).length : 0;
 // hash for a place in a text: #apology-17, #anabasis-1-3
@@ -119,7 +120,7 @@ async function reader(id, b, pg) {
   const file = x.books ? x.books[b] : x.file;
   if (!cache[file]) {
     $('app').innerHTML = `<p class="wrap empty">${esc(t().loading)}</p>`;
-    try { cache[file] = await (await fetch(file)).json(); }
+    try { cache[file] = await (await fetch(file + '?v=20261126b')).json(); }
     catch (e) { $('app').innerHTML = `<p class="wrap empty">${esc(t().failed)}</p>`; return; }
   }
   D = cache[file]; text = x; book = b;
