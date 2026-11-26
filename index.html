@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anagnosis: Greek reader</title>
+<meta name="description" content="Read Ancient Greek texts with every word parsed and glossed in English and Russian.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#">Ἀνάγνωσις<small id="tagline"></small></a>
+  <span class="spacer"></span>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-lang="en" aria-pressed="true">EN</button><button data-lang="ru" aria-pressed="false">RU</button>
+  </div>
+</div></header>
+<div id="app"><p class="wrap empty">Loading…</p></div>
+<div id="card" role="dialog" aria-live="polite">
+  <button class="x" id="close" aria-label="Close">×</button>
+  <div class="hd"><span class="lem" id="lem"></span><span class="cnt" id="cnt"></span></div>
+  <div class="gl" id="gl"></div>
+  <div class="ps" id="ps"></div>
+  <div class="ft"><button id="same"></button></div>
+</div>
+<footer><div class="wrap" id="foot"></div></footer>
+<script src="js/app.js"></script>
+</body>
+</html>

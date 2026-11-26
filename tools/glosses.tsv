@@ -1,0 +1,485 @@
+# lemma	display	gloss   (hand-written; overrides GNTSP and LSJ)
+# --- overrides of NT glosses whose sense differs in Plato ---
+θεός	θεός, οῦ, ὁ	god, God
+δαίμων	δαίμων, ονος, ὁ	divinity, divine power, deity
+δαιμόνιος	δαιμόνιος, α, ον	divine, supernatural<cr>τὸ δαιμόνιον - the divine sign
+δαιμόνιον	δαιμόνιον, ου, τό	divine sign, divine thing; (pl.) divinities
+νόμος	νόμος, ου, ὁ	law, custom
+γραφή	γραφή, ῆς, ἡ	indictment, written charge; writing
+μήν	μήν	truly, indeed<cr>καὶ μήν - and indeed; οὐ μήν - yet not
+δέω	δέω	lack, need; (mid.) ask, beg<cr>δεῖ - it is necessary, one must
+στρατηγός	στρατηγός, οῦ, ὁ	general (one of the ten Athenian generals)
+βουλευτής	βουλευτής, οῦ, ὁ	member of the Council (βουλή)
+ἐκκλησία	ἐκκλησία, ας, ἡ	assembly (of citizens)
+ἐκκλησιαστής	ἐκκλησιαστής, οῦ, ὁ	member of the Assembly
+ἐντυγχάνω	ἐντυγχάνω	meet with, happen upon (+ dat.)
+λατρεία	λατρεία, ας, ἡ	service
+ἄπιστος	ἄπιστος, ον	unbelievable; not to be trusted; unbelieving
+ἀναπείθω	ἀναπείθω	persuade, win over
+κρίσις	κρίσις, εως, ἡ	judgment, trial, decision
+στρατιά	στρατιά, ᾶς, ἡ	army, expedition
+ὅμως	ὅμως	nevertheless, all the same
+ζήτησις	ζήτησις, εως, ἡ	search, inquiry
+ψηφίζω	ψηφίζω	(mid.) vote, cast one's vote
+πῶλος	πῶλος, ου, ὁ	colt, foal
+περιάπτω	περιάπτω	fasten on, bring upon (someone)
+οἰκονομία	οἰκονομία, ας, ἡ	household management
+ἀργύριον	ἀργύριον, ου, τό	silver, money
+ὕβρις	ὕβρις, εως, ἡ	insolence, outrage
+νύμφη	νύμφη, ης, ἡ	nymph; bride
+τιμάω	τιμάω	value, honour; (in court) assess a penalty<cr>τιμᾶταί μοι θανάτου - he proposes death for me
+ἐλέγχω	ἐλέγχω	test, cross-examine, refute
+ἐπιστάτης	ἐπιστάτης, ου, ὁ	overseer, trainer
+ἀναβιβάζω	ἀναβιβάζω	bring up (onto the speaker's platform)
+ἀναβαίνω	ἀναβαίνω	go up (onto the speaker's platform)
+λείπω	λείπω	leave; (pass.) be left behind, fall short
+ποιητής	ποιητής, οῦ, ὁ	poet; maker
+ἀγών	ἀγών, ῶνος, ὁ	contest, struggle; trial
+δίκη	δίκη, ης, ἡ	justice; lawsuit, trial; penalty
+εὐλαβέομαι	εὐλαβέομαι	beware, be careful
+ἀνήρ	ἀνήρ, ἀνδρός, ὁ	man<cr>ὦ ἄνδρες Ἀθηναῖοι - gentlemen of Athens
+δικαστής	δικαστής, οῦ, ὁ	juror, judge
+ἄρχων	ἄρχων, οντος, ὁ	magistrate, archon; ruler
+ἐπιεικής	ἐπιεικής, ές	reasonable, decent, fair
+χρηστός	χρηστός, ή, όν	good, useful, honest
+τράπεζα	τράπεζα, ης, ἡ	table; bank (money-changer's table)
+μνᾶ	μνᾶ, ᾶς, ἡ	mina (sum of money = 100 drachmas)
+οἰκεῖος	οἰκεῖος, α, ον	one's own, of the family<cr>οἱ οἰκεῖοι - relatives
+ἀληθής	ἀληθής, ές	true
+ἡγέομαι	ἡγέομαι	lead; think, believe
+ἄν	ἄν	particle marking potential or indefinite statements (would, -ever)
+ἀνάγκη	ἀνάγκη, ης, ἡ	necessity, compulsion<cr>ἀνάγκη (ἐστί) - it is necessary
+ἐξετάζω	ἐξετάζω	examine, test, scrutinize
+κινδυνεύω	κινδυνεύω	run a risk, be in danger; be likely (+ inf.)
+ἀποφεύγω	ἀποφεύγω	escape; be acquitted
+ἁλίσκομαι	ἁλίσκομαι	be caught; be convicted
+διαφθείρω	διαφθείρω	destroy; corrupt
+ἀπολογέομαι	ἀπολογέομαι	speak in my defence, defend myself
+ἀπολογία	ἀπολογία, ας, ἡ	defence speech, defence
+σοφιστής	σοφιστής, οῦ, ὁ	sophist, paid teacher of wisdom
+ἀρετή	ἀρετή, ῆς, ἡ	excellence, virtue
+ψυχή	ψυχή, ῆς, ἡ	soul; life
+φιλοσοφέω	φιλοσοφέω	pursue wisdom, philosophize
+πρυτανεῖον	πρυτανεῖον, ου, τό	Prytaneum, town hall (where honoured citizens dined at public expense)
+πρυτανεύω	πρυτανεύω	be a prytanis (serve on the Council's presiding committee)
+πρύτανις	πρύτανις, εως, ὁ	prytanis (member of the Council's presiding committee)
+ψῆφος	ψῆφος, ου, ἡ	pebble; vote
+χρησμός	χρησμός, οῦ, ὁ	oracle, oracular response
+μαντεῖον	μαντεῖον, ου, τό	oracle, oracular response
+χρηματισμός	χρηματισμός, οῦ, ὁ	oracle, divine response
+ἐνύπνιον	ἐνύπνιον, ου, τό	dream
+ὄναρ	ὄναρ, τό	dream; (adv.) in a dream
+# --- particles, adverbs, function words ---
+τε	τε	and<cr>τε ... καί - both ... and
+οἴομαι	οἴομαι	think, suppose (also οἶμαι)
+γίγνομαι	γίγνομαι	become, come to be, happen; be born
+μάλα	μάλα, μᾶλλον, μάλιστα	very, exceedingly<cr>μᾶλλον - more, rather; μάλιστα - most, especially
+πάνυ	πάνυ	altogether, very<cr>πάνυ γε - certainly
+ἀποκρίνω	ἀποκρίνω	separate; (mid.) answer, reply
+αὖ	αὖ	again, in turn, on the other hand
+ἐνταῦθα	ἐνταῦθα	here, there; then
+που	που	somewhere; perhaps, I suppose
+πως	πως	somehow, in some way
+γοῦν	γοῦν	at any rate, at least
+ἦ	ἦ	truly, surely
+ἅτε	ἅτε	inasmuch as, since (+ participle)
+οἷ	οἷ	to where, whither
+ἐνθένδε	ἐνθένδε	from here, hence
+οὐδαμοῦ	οὐδαμοῦ	nowhere
+ἐπειδάν	ἐπειδάν	whenever, when (+ subj.)
+ἕνεκα	ἕνεκα	for the sake of, because of (+ gen.)
+μά	μά	by (in oaths)<cr>μὰ Δία - by Zeus (with negative: no, by Zeus)
+αὐτίκα	αὐτίκα	at once, immediately; for example
+ἐνταυθοῖ	ἐνταυθοῖ	hither, here
+ὅπῃ	ὅπῃ	where, in what way, how
+ὁπωσοῦν	ὁπωσοῦν	in any way whatever<cr>οὐδ’ ὁπωστιοῦν - not in the least
+ὁστισοῦν	ὁστισοῦν	anyone whatever, anything whatever
+ὁτιοῦν	ὁτιοῦν	anything whatever
+οὔποτε	οὔποτε	never
+οὐδεπώποτε	οὐδεπώποτε	never yet, never at any time
+οὔκουν	οὔκουν	certainly not, not then
+νυν	νυν	now, then (enclitic, with imperatives)
+νυνδί	νυνδί	now, at this very moment
+τοι	τοι	surely, you know
+πω	πω	yet, up to this time
+δῆτα	δῆτα	indeed, then
+αὖθις	αὖθις	again, back again; later
+παράπαν	παράπαν	altogether, at all
+παντάπασι	παντάπασι	altogether, completely
+πολλαχοῦ	πολλαχοῦ	in many places
+ἐφεξῆς	ἐφεξῆς	in order, one after another
+ἄλλοθι	ἄλλοθι	elsewhere
+ᾗ	ᾗ	where, in which way, as
+ἐνίοτε	ἐνίοτε	sometimes
+ἕωσπερ	ἕωσπερ	as long as, until
+πρόσθεν	πρόσθεν	before, formerly
+ἕωθεν	ἕωθεν	from morning, at dawn
+οἴκοθεν	οἴκοθεν	from home
+οἴκαδε	οἴκαδε	homeward, home
+ὁπόθεν	ὁπόθεν	from where, whence
+ὅποι	ὅποι	to where, whither
+πρόσω	πρόσω	forward, far
+αὐτόθι	αὐτόθι	there, on the spot
+Ὀλυμπίασι	Ὀλυμπίασι	at Olympia
+προῖκα	προῖκα	free of charge, as a gift
+τᾶν	ὦ τᾶν	my good sir, my friend
+ἄτεχνος	ἀτεχνῶς	simply, absolutely, really
+συντεταμένως	συντεταμένως	vigorously, earnestly
+ἠμί	ἠμί	say<cr>ἦν δ’ ἐγώ - said I; ἦ δ’ ὅς - said he
+σφεῖς	σφεῖς	they, them
+ἔνιοι	ἔνιοι, αι, α	some
+ὅστε	ὅστε	who, which (= ὅς)
+ἀμφί	ἀμφί	about, around
+# --- adjectives ---
+δεινός	δεινός, ή, όν	terrible, dreadful; clever, skilled
+ῥᾴδιος	ῥᾴδιος, α, ον	easy<cr>ῥᾳδίως - easily
+πολιτικός	πολιτικός, ή, όν	of citizens, civic, political
+πρέσβυς	πρέσβυς	old<cr>πρεσβύτερος - older, elder
+κρατύς	κρείττων, ον	stronger, better (comparative)
+ἐλαχύς	ἐλάττων, ἐλάχιστος	smaller, less; smallest, least
+ἀέκων	ἄκων, ουσα, ον	unwilling(ly), involuntary
+σαφής	σαφής, ές	clear, plain<cr>σαφῶς - clearly
+πιθανός	πιθανός, ή, όν	persuasive, plausible<cr>πιθανῶς - persuasively
+ἐμμελής	ἐμμελής, ές	harmonious; reasonable<cr>ἐμμελῶς - suitably
+θαρσαλέος	θαρσαλέος, α, ον	bold, confident
+μέτριος	μέτριος, α, ον	moderate, reasonable
+πάγκαλος	πάγκαλος, η, ον	very beautiful, splendid<cr>παγκάλως - splendidly
+σφοδρός	σφοδρός, ά, όν	vehement, violent<cr>σφόδρα - very much
+τηλικόσδε	τηλικόσδε, ήδε, όνδε	of such an age, so old
+τοσόσδε	τοσόσδε, ήδε, όνδε	so great, so much, so many
+ἑτοῖμος	ἑτοῖμος, η, ον	ready, prepared
+ἡδύς	ἡδύς, εῖα, ύ	pleasant, sweet
+ἀναίσχυντος	ἀναίσχυντος, ον	shameless
+μετέωρος	μετέωρος, ον	in the air<cr>τὰ μετέωρα - things in the heavens
+ἀξιόχρεως	ἀξιόχρεως, ων	trustworthy, credible
+οὐδέτερος	οὐδέτερος, α, ον	neither of the two
+ἀμφότερος	ἀμφότερος, α, ον	both
+μυρίος	μυρίος, α, ον	countless, numberless<cr>μυρίοι - ten thousand
+καταγέλαστος	καταγέλαστος, ον	ridiculous
+παράνομος	παράνομος, ον	unlawful, illegal
+ἀηδής	ἀηδής, ές	unpleasant, disagreeable
+ἀθάνατος	ἀθάνατος, ον	immortal, deathless
+εὐδαίμων	εὐδαίμων, ον	happy, blessed, fortunate
+ἐρῆμος	ἐρῆμος, ον	deserted, empty<cr>ἐρήμην κατηγορεῖν - prosecute an undefended case
+ἄπορος	ἄπορος, ον	without resources, at a loss
+δισσός	δισσός, ή, όν	twofold, double
+ποδαπός	ποδαπός, ή, όν	from what country?
+ἀλλοῖος	ἀλλοῖος, α, ον	of another sort, different
+ἀνέλεγκτος	ἀνέλεγκτος, ον	unrefuted
+χρησμῳδός	χρησμῳδός, όν	chanting oracles, prophetic
+μιαρός	μιαρός, ά, όν	foul, abominable
+ἀπολογέω	ἀπολογητέον	one must make a defence
+πρόχειρον	πρόχειρος, ον	ready to hand<cr>τὰ πρόχειρα - the ready-made (charges)
+φιλότιμος	φιλότιμος, ον	ambitious, loving honour
+μοχθηρός	μοχθηρός, ά, όν	wretched, wicked
+ἀκούσιος	ἀκούσιος, ον	involuntary, unintentional
+ἀκόλαστος	ἀκόλαστος, ον	undisciplined, licentious
+ἀνθρώπειος	ἀνθρώπειος, α, ον	human
+αὐλητικός	αὐλητικός, ή, όν	of flute-playing
+κορωνίς	κορωνίς, ίδος	curved, beaked (of ships)
+ἐπονείδιστος	ἐπονείδιστος, ον	disgraceful
+εὐδόκιμος	εὐδόκιμος, ον	of good repute, esteemed
+θεμιτός	θεμιτός, ή, όν	lawful, permitted (by divine law)
+γέλοιος	γέλοιος, α, ον	laughable, ridiculous
+γενναῖος	γενναῖος, α, ον	noble, well-bred
+νωθής	νωθής, ές	sluggish
+φορτικός	φορτικός, ή, όν	vulgar, tiresome
+δικανικός	δικανικός, ή, όν	of the law courts, lawyerly
+ἀθρόος	ἀθρόος, α, ον	all together, in a body
+ἄγροικος	ἄγροικος, ον	boorish, rustic
+εὐέλεγκτος	εὐέλεγκτος, ον	easy to refute
+ἀδιάφθαρτος	ἀδιάφθαρτος, ον	uncorrupted
+ἀνέλπιστος	ἀνέλπιστος, ον	unexpected
+ἑκάτερος	ἑκάτερος, α, ον	each (of two)
+ἀλόγιστος	ἀλόγιστος, ον	thoughtless, irrational
+ἐπίφθονος	ἐπίφθονος, ον	invidious, likely to cause envy
+ἀνεξέταστος	ἀνεξέταστος, ον	unexamined
+βιωτός	βιωτός, ή, όν	worth living
+ἀνελεύθερος	ἀνελεύθερος, ον	servile, unworthy of a free man
+μαντικός	μαντικός, ή, όν	prophetic<cr>ἡ μαντική - prophecy, divination
+εὐαρίθμητος	εὐαρίθμητος, ον	easily counted, few
+ἀμήχανος	ἀμήχανος, ον	impossible; extraordinary, inconceivable
+ὁπότερος	ὁπότερος, α, ον	which of two
+Κλαζομένιος	Κλαζομένιος, α, ον	of Clazomenae
+Σαλαμίνιος	Σαλαμίνιος, α, ον	of Salamis
+Πάριος	Πάριος, α, ον	of Paros, Parian
+Ἠλεῖος	Ἠλεῖος, α, ον	of Elis
+Κέως	Κεῖος, α, ον	of Ceos
+Λεοντῖνος	Λεοντῖνος, η, ον	of Leontini
+# --- verbs ---
+διαλέγω	διαλέγω	(mid.) converse, discuss
+καταψηφίζομαι	καταψηφίζομαι	vote against, condemn (+ gen.)
+ἀποψηφίζομαι	ἀποψηφίζομαι	vote to acquit (+ gen.)
+ἐναντιόομαι	ἐναντιόομαι	oppose
+δείδω	δείδω	fear
+μέλω	μέλω	(impers.) μέλει μοι - I care about (+ gen.)
+ψεύδω	ψεύδω	deceive; (mid.) lie
+γιγνώσκω	γιγνώσκω	know, recognize; decide
+ἐθέλω	ἐθέλω	be willing, wish
+ἐκτίνω	ἐκτίνω	pay off, pay in full
+αἰσχύνω	αἰσχύνω	disgrace; (mid.) be ashamed
+φοβέω	φοβέω	frighten; (mid./pass.) fear, be afraid
+ἔξεστι	ἔξεστι	it is allowed, it is possible
+προσήκω	προσήκω	belong to; be fitting<cr>προσήκει - it is fitting
+ἄχθομαι	ἄχθομαι	be annoyed, be vexed
+χαριεντίζομαι	χαριεντίζομαι	joke, jest
+ἐξελαύνω	ἐξελαύνω	drive out, expel
+βουλεύω	βουλεύω	deliberate; serve on the Council; (mid.) plan, decide
+ὀφλισκάνω	ὀφλισκάνω	be convicted, incur (a penalty)
+ἐπιλανθάνω	ἐπιλανθάνομαι	forget (+ gen.)
+ἐξελέγχω	ἐξελέγχω	refute, expose, convict
+χράω	χράω	(of a god) give an oracle
+ἔρομαι	ἔρομαι	ask
+ἀνέρομαι	ἀνέρομαι	ask, inquire
+αἰνίσσομαι	αἰνίσσομαι	speak in riddles
+τρέπω	τρέπω	turn
+ἀποφαίνω	ἀποφαίνω	show, reveal, prove
+ἀπάχθομαι	ἀπεχθάνομαι	become hated, incur hatred
+ἀπεχθάνομαι	ἀπεχθάνομαι	become hated, incur hatred
+ἐρευνάω	ἐρευνάω	search, investigate
+κήδω	κήδω	(mid.) care for, be concerned for
+συγγίγνομαι	συγγίγνομαι	associate with, keep company with (+ dat.)
+μιμνῄσκω	μιμνῄσκω	remind; (mid.) remember, mention
+ἐπιτηδεύω	ἐπιτηδεύω	pursue, practise
+ὑπολογίζομαι	ὑπολογίζομαι	take into account
+παρακελεύομαι	παρακελεύομαι	urge, encourage
+οἴχομαι	οἴχομαι	be gone, have gone
+ἐννοέω	ἐννοέω	think of, consider
+θέω	θέω	run
+ὄμνυμι	ὄμνυμι	swear
+δικάζω	δικάζω	judge, sit as a juror
+χρησμῳδέω	χρησμῳδέω	deliver oracles, prophesy
+διανοέω	διανοέω	(mid.) intend, think
+καλλιεπέομαι	καλλιεπέομαι	use fine language
+προσδοκέω	προσδοκάω	expect
+συγγιγνώσκω	συγγιγνώσκω	forgive, pardon; agree
+κατασκεδάννυμι	κατασκεδάννυμι	pour over, spread (slander)
+σκιαμαχέω	σκιαμαχέω	fight with shadows
+ἀναγιγνώσκω	ἀναγιγνώσκω	read (aloud)
+ἀεροβατέω	ἀεροβατέω	walk on air
+ἐπαΐω	ἐπαΐω	understand, be an expert in
+μέτειμι	μέτειμι	go after, pursue
+πρόσοιδα	πρόσοιδα	know besides
+καλλύνω	καλλύνω	make beautiful; (mid.) pride oneself on
+ἁβρύνω	ἁβρύνω	(mid.) give oneself airs
+αὐτοσχεδιάζω	αὐτοσχεδιάζω	speak off-hand, improvise
+συμφεύγω	συμφεύγω	go into exile with
+διασκοπέω	διασκοπέω	examine closely
+εὐδοκιμέω	εὐδοκιμέω	be well thought of, have a good name
+πονέω	πονέω	toil, labour
+ἐνθουσιάζω	ἐνθουσιάζω	be inspired, be possessed by a god
+περιγίγνομαι	περιγίγνομαι	survive; prevail over
+ἐξεργάζομαι	ἐξεργάζομαι	work out, accomplish
+ἀνερωτάω	ἀνερωτάω	question, ask
+προσχράω	προσχράομαι	use in addition, make use of
+ἐξευρίσκω	ἐξευρίσκω	find out, discover
+καταγιγνώσκω	καταγιγνώσκω	condemn; judge
+πρίαμαι	πρίαμαι	buy
+διαπειράομαι	διαπειράομαι	test thoroughly
+συνεπισκοπέω	συνεπισκοπέω	examine together
+διόμνυμι	διόμνυμι	swear solemnly
+ἀποπειράομαι	ἀποπειράομαι	test, make trial of (+ gen.)
+στάζω	στάζω	drip
+προθυμέομαι	προθυμέομαι	be eager
+ἀμφισβητέω	ἀμφισβητέω	dispute, disagree
+ἀτιμόω	ἀτιμόω	deprive of civic rights, disgrace
+ἐξαμαρτάνω	ἐξαμαρτάνω	do wrong, err
+πρόσκειμαι	πρόσκειμαι	be attached to, be set upon
+προσκαθίζω	προσκαθίζω	settle upon
+ἐπιπέμπω	ἐπιπέμπω	send upon, send to
+ἀνέχω	ἀνέχω	hold up; (mid.) endure, put up with
+ἀπολαύω	ἀπολαύω	enjoy, get benefit (or harm) from (+ gen.)
+ἀπαναισχυντέω	ἀπαναισχυντέω	be shameless enough
+πολυπραγμονέω	πολυπραγμονέω	be a busybody, meddle
+ἐπικωμῳδέω	ἐπικωμῳδέω	satirize (in comedy)
+ἰδιωτεύω	ἰδιωτεύω	live as a private citizen
+δημοσιεύω	δημοσιεύω	be in public life
+διακινδυνεύω	διακινδυνεύω	run every risk
+δημοκρατέομαι	δημοκρατέομαι	be governed democratically
+ἀναπίμπλημι	ἀναπίμπλημι	fill up; infect
+διαγίγνομαι	διαγίγνομαι	go through, pass (one's life)
+συγχωρέω	συγχωρέω	agree, concede
+παραχώννυμι	παραχώννυμι	(mid.) omit
+ὑπισχνέομαι	ὑπισχνέομαι	promise
+παραχωρέω	παραχωρέω	give way, yield
+ἱκετεύω	ἱκετεύω	beg, beseech
+αὐθαδίζομαι	αὐθαδίζομαι	be self-willed, act arrogantly
+προκρίνω	προκρίνω	prefer, choose before others
+καταχαρίζομαι	καταχαρίζομαι	grant as a favour (contrary to justice)
+χαρίζω	χαρίζομαι	do a favour, gratify
+μεταπίπτω	μεταπίπτω	change, fall differently
+ἀντιτιμάω	ἀντιτιμάω	(mid.) propose a counter-penalty
+σιτέω	σιτέω	feed; (pass.) be fed
+ἀπαυθαδίζομαι	ἀπαυθαδίζομαι	speak arrogantly
+ἀμείβω	ἀμείβω	change, exchange
+ἀκροάομαι	ἀκροάομαι	listen to (+ gen.)
+εἰρωνεύομαι	εἰρωνεύομαι	feign ignorance, be ironical
+ἐγγυάω	ἐγγυάω	(mid.) pledge, stand surety
+οἰμάω	οἰμάω	swoop
+ὀδύρομαι	ὀδύρομαι	lament, wail
+μηχανάομαι	μηχανάομαι	contrive, devise
+κολούω	κολούω	cut short; (pass.) be checked
+διαμυθολογέω	διαμυθολογέω	talk over, converse
+ἐκλέγω	ἐκλέγω	pick out, choose
+καταδαρθάνω	καταδαρθάνω	fall asleep
+ἀντιπαρατίθημι	ἀντιπαρατίθημι	set side by side, compare
+ἀντιπαραβάλλω	ἀντιπαραβάλλω	compare
+χαλεπαίνω	χαλεπαίνω	be angry
+ἡβάω	ἡβάω	be young, be in one's prime
+# --- nouns ---
+διαβολή	διαβολή, ῆς, ἡ	slander, prejudice
+μειράκιον	μειράκιον, ου, τό	youth, lad
+δικαστήριον	δικαστήριον, ου, τό	law court
+νόος	νοῦς, νοῦ, ὁ	mind, sense<cr>τὸν νοῦν προσέχειν - pay attention
+ἀμαθία	ἀμαθία, ας, ἡ	ignorance, stupidity
+ἀστός	ἀστός, οῦ, ὁ	citizen, townsman
+διατριβή	διατριβή, ῆς, ἡ	way of spending time, pastime; discussion
+ἀξία	ἀξία, ας, ἡ	worth; what one deserves
+λέξις	λέξις, εως, ἡ	way of speaking, diction, style
+ἀντωμοσία	ἀντωμοσία, ας, ἡ	sworn charge (affidavit)
+ἀντιγραφή	ἀντιγραφή, ῆς, ἡ	sworn indictment, plea
+μαντεία	μαντεία, ας, ἡ	prophecy, oracle; divination
+ἀπέχθεια	ἀπέχθεια, ας, ἡ	hatred, enmity
+ἀσχολία	ἀσχολία, ας, ἡ	lack of leisure, busy-ness
+πενία	πενία, ας, ἡ	poverty
+ἀφθονία	ἀφθονία, ας, ἡ	plenty, abundance
+εὐδαιμονία	εὐδαιμονία, ας, ἡ	happiness, prosperity
+μηχανή	μηχανή, ῆς, ἡ	means, device
+ἡμίθεος	ἡμίθεος, ου, ὁ	demigod
+θόλος	θόλος, ου, ἡ	the Tholos (round building where the prytaneis dined)
+φροντιστής	φροντιστής, οῦ, ὁ	thinker
+κωμῳδοποιός	κωμῳδοποιός, οῦ, ὁ	comic poet
+κωμῳδία	κωμῳδία, ας, ἡ	comedy
+φλυαρία	φλυαρία, ας, ἡ	nonsense
+ἐπιστήμη	ἐπιστήμη, ης, ἡ	knowledge, understanding
+συνουσία	συνουσία, ας, ἡ	company, association
+κτῆσις	κτῆσις, εως, ἡ	acquisition, possession
+θέμις	θέμις, ἡ	what is right (by divine law)<cr>οὐ θέμις - it is not right
+τραγῳδία	τραγῳδία, ας, ἡ	tragedy
+διθύραμβος	διθύραμβος, ου, ὁ	dithyramb (choral song to Dionysus)
+θεόμαντις	θεόμαντις, εως, ὁ	soothsayer, seer
+χειροτέχνης	χειροτέχνης, ου, ὁ	craftsman, artisan
+πλημμέλεια	πλημμέλεια, ας, ἡ	error, mistake (lit. false note)
+ἐξέτασις	ἐξέτασις, εως, ἡ	examination, scrutiny
+παράδειγμα	παράδειγμα, ατος, τό	example, model
+φιλόπολις	φιλόπολις, ιδος, ὁ	patriot, lover of one's city
+δυστυχία	δυστυχία, ας, ἡ	misfortune
+ἀμέλεια	ἀμέλεια, ας, ἡ	neglect, carelessness
+μάθησις	μάθησις, εως, ἡ	learning
+ὀρχήστρα	ὀρχήστρα, ας, ἡ	orchestra (part of the agora where books were sold)
+ἀκολασία	ἀκολασία, ας, ἡ	lack of self-control
+ἡμίονος	ἡμίονος, ου, ὁ	mule
+ἥρως	ἥρως, ωος, ὁ	hero
+ἐπιτήδευμα	ἐπιτήδευμα, ατος, τό	pursuit, way of life
+πότμος	πότμος, ου, ὁ	fate, death
+ἄχθος	ἄχθος, ους, τό	burden, load
+ἄρουρα	ἄρουρα, ας, ἡ	earth, ploughland
+δοκεύς	δοκεύς	(see δοκέω)
+ὑπηρεσία	ὑπηρεσία, ας, ἡ	service
+μύωψ	μύωψ, ωπος, ὁ	gadfly; spur
+ναυμαχία	ναυμαχία, ας, ἡ	sea battle
+ὀλιγαρχία	ὀλιγαρχία, ας, ἡ	oligarchy
+μάθημα	μάθημα, ατος, τό	lesson, what is learnt
+μοῖρα	μοῖρα, ας, ἡ	portion, lot; fate
+ἡλικιώτης	ἡλικιώτης, ου, ὁ	contemporary, person of the same age
+δημότης	δημότης, ου, ὁ	fellow demesman
+ἀνδρεία	ἀνδρεία, ας, ἡ	courage, manliness
+δρῦς	δρῦς, δρυός, ἡ	oak, tree
+δρᾶμα	δρᾶμα, ατος, τό	play, drama
+στρατηγία	στρατηγία, ας, ἡ	generalship, command
+δημηγορία	δημηγορία, ας, ἡ	public speech
+παρακέλευσις	παρακέλευσις, εως, ἡ	exhortation
+συνωρίς	συνωρίς, ίδος, ἡ	pair of horses, two-horse chariot
+σίτησις	σίτησις, εως, ἡ	public maintenance, free meals
+οἶκτος	οἶκτος, ου, ὁ	pity, lamentation
+ἀντιβόλησις	ἀντιβόλησις, εως, ἡ	entreaty
+φιλοψυχία	φιλοψυχία, ας, ἡ	love of life, cowardice
+ἐγγυητής	ἐγγυητής, οῦ, ὁ	guarantor, surety
+τόλμα	τόλμα, ης, ἡ	daring, boldness
+ἀναισχυντία	ἀναισχυντία, ας, ἡ	shamelessness
+ἱκετεία	ἱκετεία, ας, ἡ	supplication
+μοχθηρία	μοχθηρία, ας, ἡ	wickedness
+τίμημα	τίμημα, ατος, τό	assessment, penalty
+ἀπαλλαγή	ἀπαλλαγή, ῆς, ἡ	release, departure
+μεταβολή	μεταβολή, ῆς, ἡ	change
+μετοίκησις	μετοίκησις, εως, ἡ	migration, change of home
+ἀποδημία	ἀποδημία, ας, ἡ	journey abroad
+εὔελπις	εὔελπις, ι	hopeful
+# --- names ---
+Σωκράτης	Σωκράτης, ους, ὁ	Socrates
+Μέλητος	Μέλητος, ου, ὁ	Meletus (one of Socrates' accusers)
+Ἄνυτος	Ἄνυτος, ου, ὁ	Anytus (one of Socrates' accusers)
+Λύκων	Λύκων, ωνος, ὁ	Lycon (one of Socrates' accusers)
+Λύκος	Λύκων, ωνος, ὁ	Lycon (one of Socrates' accusers)
+Ἀριστοφάνης	Ἀριστοφάνης, ους, ὁ	Aristophanes (comic poet)
+Γοργίης	Γοργίας, ου, ὁ	Gorgias (sophist from Leontini)
+Πρόδικος	Πρόδικος, ου, ὁ	Prodicus (sophist from Ceos)
+Ἱππίης	Ἱππίας, ου, ὁ	Hippias (sophist from Elis)
+Καλλίης	Καλλίας, ου, ὁ	Callias (wealthy Athenian, patron of sophists)
+Ἱππόνικος	Ἱππόνικος, ου, ὁ	Hipponicus (father of Callias)
+Εὔηνος	Εὔηνος, ου, ὁ	Evenus (sophist from Paros)
+Χαιρεφῶν	Χαιρεφῶν, ῶντος, ὁ	Chaerephon (friend of Socrates)
+Δελφοί	Δελφοί, ῶν, οἱ	Delphi
+Πυθία	Πυθία, ας, ἡ	the Pythia (priestess of Apollo at Delphi)
+Ἀναξαγόρης	Ἀναξαγόρας, ου, ὁ	Anaxagoras (philosopher from Clazomenae)
+Ἕκτωρ	Ἕκτωρ, ορος, ὁ	Hector
+Θέτις	Θέτις, ιδος, ἡ	Thetis (mother of Achilles)
+Πάτροκλος	Πάτροκλος, ου, ὁ	Patroclus
+Ἥρα	Ἥρα, ας, ἡ	Hera
+Τροία	Τροία, ας, ἡ	Troy
+Ὅμηρος	Ὅμηρος, ου, ὁ	Homer
+ᾍδης	ᾍδης, ου, ὁ	Hades
+Ποτείδαια	Ποτείδαια, ας, ἡ	Potidaea
+Δήλιον	Δήλιον, ου, τό	Delium
+Λέων	Λέων, οντος, ὁ	Leon (of Salamis)
+Ἀντιοχίς	Ἀντιοχίς, ίδος, ἡ	Antiochis (Socrates' tribe)
+Κρίτων	Κρίτων, ωνος, ὁ	Crito (friend of Socrates)
+Κριτόβουλος	Κριτόβουλος, ου, ὁ	Critobulus (son of Crito)
+Σφήττιος	Σφήττιος, ου, ὁ	man of the deme Sphettus
+Αἰσχίνης	Αἰσχίνης, ου, ὁ	Aeschines (of Sphettus, follower of Socrates)
+Ἀντιφῶν	Ἀντιφῶν, ῶντος, ὁ	Antiphon (of Cephisia)
+Κηφισιεύς	Κηφισιεύς, έως, ὁ	man of the deme Cephisia
+Ἐπιγένης	Ἐπιγένης, ους, ὁ	Epigenes
+Νικόστρατος	Νικόστρατος, ου, ὁ	Nicostratus
+Θεοζοτίδης	Θεοζοτίδης, ου, ὁ	Theozotides
+Θεόδοτος	Θεόδοτος, ου, ὁ	Theodotus
+Παράλιος	Πάραλος, ου, ὁ	Paralus
+Δημόδοκος	Δημόδοκος, ου, ὁ	Demodocus
+Θεάγης	Θεάγης, ους, ὁ	Theages
+Ἀδείμαντος	Ἀδείμαντος, ου, ὁ	Adeimantus (Plato's brother)
+Ἀρίστων	Ἀρίστων, ωνος, ὁ	Ariston (Plato's father)
+Αἰαντόδωρος	Αἰαντόδωρος, ου, ὁ	Aeantodorus
+Πλάτων	Πλάτων, ωνος, ὁ	Plato
+Ἀπολλόδωρος	Ἀπολλόδωρος, ου, ὁ	Apollodorus (follower of Socrates)
+Μίνως	Μίνως, ωος, ὁ	Minos (judge in the underworld)
+Ῥαδάμανθυς	Ῥαδάμανθυς, υος, ὁ	Rhadamanthys (judge in the underworld)
+Αἰακός	Αἰακός, οῦ, ὁ	Aeacus (judge in the underworld)
+Τριπτόλεμος	Τριπτόλεμος, ου, ὁ	Triptolemus
+Ὀρφεύς	Ὀρφεύς, έως, ὁ	Orpheus
+Μουσαῖος	Μουσαῖος, ου, ὁ	Musaeus (legendary poet)
+Ἡσίοδος	Ἡσίοδος, ου, ὁ	Hesiod
+Παλαμήδης	Παλαμήδης, ους, ὁ	Palamedes
+Αἴας	Αἴας, αντος, ὁ	Ajax
+Τελαμών	Τελαμών, ῶνος, ὁ	Telamon (father of Ajax)
+Ὀδυσσεύς	Ὀδυσσεύς, έως, ὁ	Odysseus
+Σίσυφος	Σίσυφος, ου, ὁ	Sisyphus
+σύμπας	σύμπας, ασα, αν	all together, the whole
+γεωργικός	γεωργικός, ή, όν	of farming, agricultural
+δίκαιος	δίκαιος, α, ον	just, right
+ἄδικος	ἄδικος, ον	unjust, wrong
+σημεῖον	σημεῖον, ου, τό	sign, indication
+ἁμάρτημα	ἁμάρτημα, ατος, τό	error, fault, wrongdoing
+ἐπιθυμέω	ἐπιθυμέω	desire, long for (+ gen.)
+χάρις	χάρις, ιτος, ἡ	favour, gratitude, kindness<cr>χάριν - for the sake of (+ gen.)
+ἄθεος	ἄθεος, ον	godless, not believing in gods
+ἀπιστέω	ἀπιστέω	disbelieve, distrust
+ἀνόσιος	ἀνόσιος, ον	unholy, impious
+μαθητής	μαθητής, οῦ, ὁ	pupil, student
+ὅσιος	ὅσιος, α, ον	holy, pious, sanctioned by divine law
+ἀδικία	ἀδικία, ας, ἡ	injustice, wrongdoing
+σῴζω	σῴζω	save, keep safe
+πιστεύω	πιστεύω	trust, believe
+ἀποθνῄσκω	ἀποθνῄσκω	die, be put to death
+θνῄσκω	θνῄσκω	die<cr>τέθνηκα - I am dead
+θαυμάζω	θαυμάζω	wonder, be amazed (at)
+πάσχω	πάσχω	experience, suffer; be affected

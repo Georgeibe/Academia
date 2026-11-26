@@ -1,0 +1,107 @@
+/* VOICE: a quiet study edition; the Greek is the hero, everything else steps back
+   IDEA: a reading text with a coloured verb key, cited by Stephanus page and section
+   PICTURE: the Greek page itself, verbs coloured by tense; the word card docked below
+   COLOUR and TYPE: paper white / night ink, six tense colours, Aegean blue for links; Gentium Book Plus + Inter
+   LAYOUT: slim header, sticky page strip and controls, one text column, card at the bottom */
+:root{color-scheme:light dark;
+--bg:light-dark(#fcfbf8,#14130f);--ink:light-dark(#1c1a15,#ece8de);--mute:light-dark(#726b5c,#a29c8e);
+--line:light-dark(#e6e1d6,#2f2c25);--soft:light-dark(#f2efe8,#1d1c17);--link:light-dark(#1f5fa8,#7fb2ee);
+--card:#2a2419;--cardink:#f7f0e2;--hi:light-dark(#ffe98a,#5c4b00);
+--TP:light-dark(#0a922a,#4ed46a);--TI:light-dark(#cf6a06,#ffa54d);--TF:light-dark(#1f6fd0,#6fb0ff);
+--TA:light-dark(#d41c1c,#ff6b6b);--TX:light-dark(#8a1ee0,#c18bff);--TY:light-dark(#bf00bf,#ff7bff)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:150px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:var(--link)}
+button{font:inherit;color:inherit}
+button:focus-visible,select:focus-visible,a:focus-visible,.w:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+.wrap{max-width:980px;margin:auto;padding-inline:max(4vw,16px)}
+
+/* header */
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:12px;min-height:60px}
+.brand{font:700 24px/1 "Gentium Book Plus",serif;text-decoration:none;color:var(--ink)}
+.brand small{display:block;font:400 12px/1.3 Inter,sans-serif;color:var(--mute);margin-top:3px}
+.spacer{flex:1}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{border:0;background:none;min-width:48px;min-height:40px;cursor:pointer;font-weight:600}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+
+/* library */
+.hero{padding:clamp(28px,5vw,56px) 0 8px}
+.hero h1{font:700 clamp(32px,6vw,52px)/1.05 "Gentium Book Plus",serif;margin:0 0 10px;text-wrap:balance}
+.hero p{max-width:62ch;margin:0;color:var(--mute);font-size:17px}
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:16px;padding:24px 0 48px}
+.book{display:block;border:1px solid var(--line);border-radius:14px;padding:18px;text-decoration:none;color:var(--ink);background:var(--soft)}
+.book:hover{border-color:var(--ink)}
+.book .gr{font:700 26px/1.15 "Gentium Book Plus",serif}
+.book .au{color:var(--mute);margin:2px 0 10px}
+.book .meta{font-size:14px;color:var(--mute)}
+.book.soon{opacity:.6;pointer-events:none}
+.book .tag{display:inline-block;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin-top:10px}
+.howto{border-top:1px solid var(--line);padding:24px 0 56px;color:var(--mute);font-size:15px}
+.howto h2{font:700 20px/1.2 "Gentium Book Plus",serif;color:var(--ink);margin:0 0 8px}
+
+/* reader controls */
+.bar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.title{display:flex;align-items:baseline;gap:10px;padding-top:10px}
+.title a{text-decoration:none;font-size:15px;white-space:nowrap}
+.title h1{font:700 22px/1.2 "Gentium Book Plus",serif;margin:0}
+.pages{display:flex;gap:4px;overflow-x:auto;padding:8px 0;scroll-snap-type:x proximity;scrollbar-width:thin}
+.pages button{flex:none;min-width:44px;height:44px;border:1px solid var(--line);background:none;border-radius:8px;font-weight:600;cursor:pointer;scroll-snap-align:center}
+.pages button[aria-current=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.ctrl{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;padding:0 0 10px}
+.key{display:flex;flex-wrap:wrap;gap:6px}
+.key button{display:flex;align-items:center;gap:6px;min-height:36px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:none;font-size:14px;cursor:pointer}
+.key button i{width:12px;height:12px;border-radius:50%;background:var(--c)}
+.key button[aria-pressed=false]{opacity:.45}.key button[aria-pressed=false] i{background:none;border:2px solid var(--c)}
+.opts{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.opts label{font-size:14px;color:var(--mute)}
+select{min-height:40px;font:16px Inter,sans-serif;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);padding:0 8px}
+.btn{min-height:40px;padding:0 14px;border:1px solid var(--line);border-radius:8px;background:none;cursor:pointer;font-size:15px}
+.btn[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* text */
+main.read{padding:18px 0 260px}
+.sec{display:grid;grid-template-columns:3.4em minmax(0,1fr);gap:0 10px;margin:0 0 16px}
+.m{font:700 15px/2 Inter,sans-serif;color:var(--mute);text-align:right;padding-top:.4em}
+.t{font:clamp(21px,2.6vw,26px)/1.75 "Gentium Book Plus",serif;margin:0}
+.tr{grid-column:2;margin:4px 0 6px;font-size:16px;line-height:1.6;color:var(--mute);border-left:3px solid var(--line);padding-left:12px;max-width:70ch}
+.w{cursor:pointer;border-radius:4px}
+.w:hover{background:var(--soft)}
+.vb{color:var(--c);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.vb.off{color:inherit;text-decoration:none}
+.vb.ptc{font-style:italic;font-weight:700;text-decoration:none}
+.vb.inf{text-decoration:line-through;text-decoration-thickness:2px}
+.vb.off.ptc,.vb.off.inf{font-style:normal;font-weight:400;text-decoration:none}
+.same{box-shadow:inset 0 -3px 0 var(--link)}
+.sel{background:var(--hi)!important}
+.TP{--c:var(--TP)}.TI{--c:var(--TI)}.TF{--c:var(--TF)}.TA{--c:var(--TA)}.TX{--c:var(--TX)}.TY{--c:var(--TY)}
+.legend{color:var(--mute);font-size:13px;margin:28px 0 0;max-width:70ch}
+.pager{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+
+/* vocabulary panel */
+.vocab{border:1px solid var(--line);border-radius:12px;padding:6px 14px;margin:0 0 18px;background:var(--soft)}
+.vocab h2{font:700 18px/1.3 "Gentium Book Plus",serif;margin:8px 0}
+.vocab table{width:100%;border-collapse:collapse;font-size:15px}
+.vocab td{padding:6px 6px 6px 0;border-top:1px solid var(--line);vertical-align:top}
+.vocab td.g{font:18px/1.3 "Gentium Book Plus",serif;white-space:nowrap}
+.vocab td.n{text-align:right;color:var(--mute);font-variant-numeric:tabular-nums;white-space:nowrap}
+.vocab .gl{white-space:pre-line}
+
+/* word card */
+#card{position:fixed;left:50%;bottom:max(12px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(580px,calc(100% - 24px));background:var(--card);color:var(--cardink);border-radius:14px;padding:14px 16px;box-shadow:0 10px 30px #0006;display:none;z-index:10}
+#card.on{display:block}
+#card .hd{display:flex;justify-content:space-between;gap:10px;align-items:baseline;padding-right:40px}
+#card .lem{font:700 22px/1.2 "Gentium Book Plus",serif}
+#card .cnt{font-size:13px;opacity:.75;white-space:nowrap}
+#card .gl{margin:6px 0 4px;white-space:pre-line;font-size:16px}
+#card .ps{font-size:14px;opacity:.85}
+#card .ft{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+#card .ft button{min-height:40px;padding:0 12px;border:1px solid #fff4;border-radius:8px;background:none;cursor:pointer;font-size:14px}
+#card .x{position:absolute;top:4px;right:4px;width:44px;height:44px;border:0;background:none;font-size:22px;cursor:pointer;opacity:.7}
+.empty{color:var(--mute)}
+footer{border-top:1px solid var(--line);color:var(--mute);font-size:13px;padding:18px 0 32px}
+@media (prefers-reduced-motion:no-preference){#card.on{animation:up .18s ease-out}@keyframes up{from{opacity:0;translate:0 10px}}}
+@media (max-width:600px){.bar{position:static}.sec{grid-template-columns:2.4em minmax(0,1fr);gap:0 6px}.brand small{display:none}.title h1{font-size:19px}}
