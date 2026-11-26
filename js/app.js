@@ -6,7 +6,8 @@ const TEXTS = [
     title: { en: 'Apology of Socrates', ru: 'Апология Сократа', ka: 'სოკრატეს აპოლოგია' }, author: { en: 'Plato', ru: 'Платон', ka: 'პლატონი' },
     unit: { en: 'Stephanus page', ru: 'страница Стефана', ka: 'სტეფანუსის გვერდი' } },
   { id: 'anabasis', gr: 'Κύρου Ἀνάβασις', title: { en: 'Anabasis', ru: 'Анабасис', ka: 'ანაბასისი' },
-    author: { en: 'Xenophon', ru: 'Ксенофонт', ka: 'ქსენოფონტი' }, unit: { en: 'Chapter', ru: 'Глава', ka: 'თავი' },
+    author: { en: 'Xenophon', ru: 'Ксенофонт', ka: 'ქსენოფონტი' },
+    ruLabel: { en: 'Russian (experimental, Claude)', ru: 'Русский (экспериментальный, Claude)', ka: 'რუსული (ექსპერიმენტული, Claude)' }, unit: { en: 'Chapter', ru: 'Глава', ka: 'თავი' },
     books: { 1: 'data/anabasis-1.json', 2: 'data/anabasis-2.json', 3: 'data/anabasis-3.json', 4: 'data/anabasis-4.json', 5: 'data/anabasis-5.json', 6: 'data/anabasis-6.json', 7: 'data/anabasis-7.json' }, nbooks: 7 },
 ];
 const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
@@ -26,7 +27,7 @@ const T = {
     book: 'Book', books_ready: n => `Book${n > 1 ? 's' : ''} ${n === 1 ? 'I' : 'I–' + ROMAN[n]} available`,
     legend: {
       apology: 'Text, lemmas and parsing: GLAUx corpus (A. Keersmaekers, CC BY-SA 4.0), based on the Perseus Digital Library. English translation: H. N. Fowler (1914), Perseus, CC BY-SA. Russian translation: M. S. Solovyov (1899–1903), public domain. Georgian translation: Levan Berdzenishvili, used with the translator’s permission. Meanings: Greek Study App dictionary (J. Jansen) and written for this site.',
-      anabasis: 'Text: Perseus Digital Library. Lemmas and parsing: GLAUx corpus (A. Keersmaekers, CC BY-SA 4.0), corrected with V. Gorman\'s hand-checked treebank. English translation: C. L. Brownson (1922), Perseus, CC BY-SA. Meanings: Greek Study App dictionary (J. Jansen) and written for this site.',
+      anabasis: 'Text: Perseus Digital Library. Lemmas and parsing: GLAUx corpus (A. Keersmaekers, CC BY-SA 4.0), corrected with V. Gorman\'s hand-checked treebank. English translation: C. L. Brownson (1922), Perseus, CC BY-SA. Russian translation: experimental, made by Claude (Anthropic) directly from the Greek; it may contain errors. Meanings: Greek Study App dictionary (J. Jansen) and written for this site.',
     },
     foot: 'Open project. Corrections are welcome on GitHub.',
   },
@@ -43,7 +44,7 @@ const T = {
     book: 'Книга', books_ready: n => n === 1 ? 'Доступна книга I' : `Доступны книги I–${ROMAN[n]}`,
     legend: {
       apology: 'Текст, леммы и разбор: корпус GLAUx (A. Keersmaekers, CC BY-SA 4.0) на основе Perseus Digital Library. Английский перевод: H. N. Fowler (1914), Perseus, CC BY-SA. Русский перевод: М. С. Соловьёв (1899–1903), общественное достояние. Грузинский перевод: Леван Бердзенишвили, публикуется с разрешения переводчика. Значения: словарь Greek Study App (J. Jansen) и составленные для этого сайта.',
-      anabasis: 'Текст: Perseus Digital Library. Леммы и разбор: корпус GLAUx (A. Keersmaekers, CC BY-SA 4.0), исправленный по размеченному вручную корпусу В. Горман. Английский перевод: C. L. Brownson (1922), Perseus, CC BY-SA. Значения: словарь Greek Study App (J. Jansen) и составленные для этого сайта.',
+      anabasis: 'Текст: Perseus Digital Library. Леммы и разбор: корпус GLAUx (A. Keersmaekers, CC BY-SA 4.0), исправленный по размеченному вручную корпусу В. Горман. Английский перевод: C. L. Brownson (1922), Perseus, CC BY-SA. Русский перевод: экспериментальный, выполнен Claude (Anthropic) непосредственно с греческого; возможны ошибки. Значения: словарь Greek Study App (J. Jansen) и составленные для этого сайта.',
     },
     foot: 'Открытый проект. Исправления приветствуются на GitHub.',
   },
@@ -60,7 +61,7 @@ const T = {
     book: 'წიგნი', books_ready: n => n === 1 ? 'ხელმისაწვდომია I წიგნი' : `ხელმისაწვდომია I–${ROMAN[n]} წიგნები`,
     legend: {
       apology: 'ტექსტი, ლემები და ანალიზი: კორპუსი GLAUx (A. Keersmaekers, CC BY-SA 4.0), Perseus Digital Library-ის საფუძველზე. ინგლისური თარგმანი: H. N. Fowler (1914), Perseus, CC BY-SA. რუსული თარგმანი: მ. ს. სოლოვიოვი (1899–1903), საზოგადოებრივი საკუთრება. ქართული თარგმანი: ლევან ბერძენიშვილი, ქვეყნდება მთარგმნელის ნებართვით. მნიშვნელობები: Greek Study App-ის ლექსიკონი (J. Jansen) და ამ საიტისთვის შედგენილი.',
-      anabasis: 'ტექსტი: Perseus Digital Library. ლემები და ანალიზი: კორპუსი GLAUx (A. Keersmaekers, CC BY-SA 4.0), შესწორებული ვ. გორმანის ხელით შემოწმებული კორპუსით. ინგლისური თარგმანი: C. L. Brownson (1922), Perseus, CC BY-SA. მნიშვნელობები: Greek Study App-ის ლექსიკონი (J. Jansen) და ამ საიტისთვის შედგენილი.',
+      anabasis: 'ტექსტი: Perseus Digital Library. ლემები და ანალიზი: კორპუსი GLAUx (A. Keersmaekers, CC BY-SA 4.0), შესწორებული ვ. გორმანის ხელით შემოწმებული კორპუსით. ინგლისური თარგმანი: C. L. Brownson (1922), Perseus, CC BY-SA. რუსული თარგმანი: ექსპერიმენტული, შესრულებულია Claude-ის (Anthropic) მიერ უშუალოდ ბერძნულიდან; შესაძლოა შეიცავდეს შეცდომებს. მნიშვნელობები: Greek Study App-ის ლექსიკონი (J. Jansen) და ამ საიტისთვის შედგენილი.',
     },
     foot: 'ღია პროექტი. შესწორებებს სიამოვნებით მივიღებთ GitHub-ზე.',
   },
@@ -120,7 +121,7 @@ async function reader(id, b, pg) {
   const file = x.books ? x.books[b] : x.file;
   if (!cache[file]) {
     $('app').innerHTML = `<p class="wrap empty">${esc(t().loading)}</p>`;
-    try { cache[file] = await (await fetch(file + '?v=20261126d')).json(); }
+    try { cache[file] = await (await fetch(file + '?v=20261126e')).json(); }
     catch (e) { $('app').innerHTML = `<p class="wrap empty">${esc(t().failed)}</p>`; return; }
   }
   D = cache[file]; text = x; book = b;
@@ -142,7 +143,7 @@ async function reader(id, b, pg) {
         <div class="opts">
           <label for="tr">${esc(t().trans)}</label>
           <select id="tr"><option value="none">${esc(t().none)}</option><option value="en" ${hasEn ? '' : 'disabled'}>${esc(t().en)}</option>
-            <option value="ru" ${hasRu ? '' : 'disabled'}>${esc(hasRu ? t().ru : t().ru_soon)}</option>${hasKa ? `<option value="ka">${esc(t().ka)}</option>` : ''}</select>
+            <option value="ru" ${hasRu ? '' : 'disabled'}>${esc(hasRu ? (x.ruLabel ? x.ruLabel[S.lang] : t().ru) : t().ru_soon)}</option>${hasKa ? `<option value="ka">${esc(t().ka)}</option>` : ''}</select>
           <button class="btn" id="vb" aria-pressed="${S.vocab}">${esc(t().vocab)}</button>
         </div>
       </div>
