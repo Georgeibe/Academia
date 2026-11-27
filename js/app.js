@@ -131,7 +131,7 @@ async function reader(id, b, pg) {
   const file = x.books ? x.books[b] : x.file;
   if (!cache[file]) {
     $('app').innerHTML = `<p class="wrap empty">${esc(t().loading)}</p>`;
-    try { cache[file] = await (await fetch(file + '?v=20261128i')).json(); }
+    try { cache[file] = await (await fetch(file + '?v=20261128j')).json(); }
     catch (e) { $('app').innerHTML = `<p class="wrap empty">${esc(t().failed)}</p>`; return; }
   }
   D = cache[file]; text = x; book = b;
@@ -188,7 +188,7 @@ function vocabHTML(p) {
   const rows = [...seen.keys()].map(i => D.L[i]).filter(l => l[2] !== 'definite article').sort((a, b) => b[5] - a[5]);
   const where = text.books ? `${ROMAN[book]}.${p[0]}` : p[0];
   return `<section class="vocab"><h2>${esc(t().vocab_h(where))}</h2><table><tbody>${rows.map(l =>
-    `<tr><td class="g">${esc(l[1])}</td><td class="gl">${esc(S.lang === 'ru' ? l[4] || l[3] : l[3])}</td><td class="n">${l[5]}</td></tr>`).join('')}</tbody></table></section>`;
+    `<tr><td class="g">${esc(l[1])}</td><td class="gl">${esc(gloss(l))}</td><td class="n">${l[5]}</td></tr>`).join('')}</tbody></table></section>`;
 }
 
 function renderText() {
@@ -262,7 +262,27 @@ const CXT = {
     auto: 'განსაზღვრულია ავტომატურად სინტაქსური ანალიზით; შეცდომები შესაძლებელია.',
   },
 };
-CXT.ka.c = CXT.en.c;
+CXT.ka.c = {
+  aci: ['ბრალდებითი ინფინიტივთან', 'accusativus cum infinitivo', 'ინფინიტივის ქვემდებარე ბრალდებით ბრუნვაშია. ბრუნვა დამოკიდებულია თქმის, ფიქრის, სურვილის ან ბრძანების ზმნაზე და ჩვეულებრივ დამოკიდებული წინადადებით ითარგმნება: «რომ…».'],
+  nci: ['სახელობითი ინფინიტივთან', 'nominativus cum infinitivo', 'ინფინიტივს იგივე ქვემდებარე აქვს, რაც მმართველ ზმნას (δοκεῖ «ჩანს», λέγεται «ამბობენ»), ამიტომ ქვემდებარეც და სახელადი ნაწილიც სახელობითშია: «ის, როგორც ჩანს, …», «ამბობენ, რომ ის…».'],
+  gen_abs: ['ნათესაობითი აბსოლუტური', 'genitivus absolutus', 'მიმღეობა და მისი ქვემდებარე ნათესაობითშია და გრამატიკულად არ უკავშირდება დანარჩენ წინადადებას. ითარგმნება დამოკიდებული წინადადებით: «როცა…», «რადგან…», «თუმცა…», «თუ…».'],
+  acc_abs: ['ბრალდებითი აბსოლუტური', 'accusativus absolutus', 'უპირო ზმნის მიმღეობა საშუალო სქესის ბრალდებითში (ἐξόν «თუმცა შეიძლებოდა», δέον «რაკი საჭირო იყო», δόξαν «როცა გადაწყდა»). იხმარება ნათესაობითი აბსოლუტურის ნაცვლად, როცა ქვემდებარე არ არის.'],
+  tygx: ['დამატებითი მიმღეობა (τυγχάνω, λανθάνω, φθάνω)', 'participium coniunctum', 'მთავარ აზრს მიმღეობა გამოხატავს, ზმნა კი მხოლოდ ელფერს უმატებს: τυγχάνω + მიმღ. «სწორედ, შემთხვევით …», λανθάνω + მიმღ. «… შეუმჩნევლად», φθάνω + მიმღ. «… უფრო ადრე», διατελέω + მიმღ. «განუწყვეტლივ …».'],
+  perc: ['მიმღეობა აღქმისა და ცოდნის ზმნის შემდეგ', 'participium in oratione obliqua', '«ხედვა, მოსმენა, ცოდნა, შეტყობა» ზმნების შემდეგ მიმღეობა აღქმის შინაარსს გადმოსცემს: «დაინახა, რომ ისინი ახლოვდებოდნენ».'],
+  fut_ptc: ['მყოფადის მიმღეობა მიზნის გამოსახატავად', 'participium futuri finale', 'მყოფადის მიმღეობა (ხშირად ὡς-თან ერთად) მიზანს გამოხატავს: «მოვიდა საბრძოლველად». ὡς-ით მიზანი მოქმედი პირის განზრახვად არის წარმოდგენილი.'],
+  art_inf: ['გაარსებითებული ინფინიტივი', 'infinitivus cum articulo', 'ინფინიტივი საშუალო სქესის არტიკლით არსებით სახელად იქცევა და არტიკლით იბრუნვის: τὸ μάχεσθαι «ბრძოლა», τοῦ μάχεσθαι «ბრძოლისა», διὰ τὸ εἶναι «იმის გამო, რომ იყო».'],
+  prin: ['πρίν ინფინიტივთან', 'priusquam', 'მტკიცებითი მთავარი წინადადების შემდეგ πρίν + ინფინიტივი ნიშნავს «სანამ, ვიდრე». ინფინიტივის ქვემდებარე, თუ განსხვავებულია, ბრალდებითშია.'],
+  hoste_inf: ['ὥστε ინფინიტივთან', 'consecutio', 'შედეგი, რომელიც შესაძლებლად ან ბუნებრივად მოიაზრება: «ისე, რომ…», «იმდენად, რომ შეეძლოთ…».'],
+  hoste_ind: ['ὥστε თხრობით კილოსთან', 'consecutio', 'ნამდვილად დამდგარი შედეგი: «ისე რომ (მართლაც)…».'],
+  pot_opt: ['პოტენციური ოპტატივი', 'optativus potentialis', 'ოპტატივი ἄν-თან ერთად შესაძლებლობას ან თავაზიან მტკიცებას გამოხატავს: «შეეძლო», «ალბათ». οὐ-სთან — «ძნელად თუ», «ვერ შეძლებდა».'],
+  unreal: ['ირეალური პირობა', 'irrealis', 'თხრობითი კილოს წარსული დრო ἄν-თან ერთად აღწერს იმას, რაც სინამდვილეში არ არის ან არ ყოფილა: იმპერფექტი — «…-და» (ახლა), აორისტი — «…-და» (წარსულში).'],
+  an_inf: ['ἄν ინფინიტივთან ან მიმღეობასთან', 'potentialis in oratione obliqua', 'ირიბ ნათქვამში ἄν ინფინიტივთან ან მიმღეობასთან ინარჩუნებს შესაძლებლობის ან ირეალობის მნიშვნელობას, რომელიც პირდაპირ ნათქვამში ოპტატივს ან ἄν-იან თხრობითს ჰქონდა.'],
+  obl_opt: ['ირიბი ნათქვამის ოპტატივი', 'optativus obliquus', 'მთავარ წინადადებაში წარსული დროის შემდეგ დამოკიდებული წინადადების ზმნა (ὅτι, ὡς, ირიბი კითხვა) შეიძლება ოპტატივში იდგეს. ითარგმნება ჩვეულებრივი თხრობითი კილოთი: «თქვა, რომ ის მიდის».'],
+  iter_opt: ['განმეორებადი მოქმედება წარსულში', 'optativus iterativus', 'ოპტატივი დროის ან მიმართებით დამოკიდებულ წინადადებაში (ἐπεί, ὁπότε, ὅστις) წარსული დროის შემდეგ განმეორებას ნიშნავს: «ყოველთვის, როცა…».'],
+  final_opt: ['მიზნის ან ცდის დამოკიდებული წინადადება', 'optativus finalis', 'წარსული დროის შემდეგ მიზნის დამოკიდებული წინადადების ზმნა (ἵνα, ὅπως, ὡς) შეიძლება კონიუნქტივის ნაცვლად ოპტატივში იდგეს: «რათა…».'],
+  ei_opt: ['εἰ ოპტატივთან', 'condicio potentialis / iterativa', 'პირობა εἰ + ოპტატივით: ან «თუკი (უცებ)…» მომავალზე (ჩვეულებრივ მთავარში ἄν + ოპტატივი), ან «ყოველთვის, თუ…» წარსულზე, ან ირიბი კითხვა «თუ არა».'],
+  wish_opt: ['ნატვრის ოპტატივი', 'optativus cupitivus', 'ოპტატივი ἄν-ის გარეშე (ხშირად εἴθε, εἰ γάρ-თან) ნატვრას გამოხატავს: «დაე…», «ნეტავ…».'],
+};
 let cxOn = true, cxCur = [];
 function cxMark(on) {
   document.querySelectorAll('.cx-me,.cx-m,.cx-g').forEach(e => e.classList.remove('cx-me', 'cx-m', 'cx-g'));
@@ -286,13 +306,16 @@ function cxShow(id) {
   cxMark(cxOn && cxCur.length);
 }
 
+// gloss in the interface language: L = [lemma, display, pos, en, ru, count, ka]
+const gloss = l => S.lang === 'ru' ? (l[4] || l[3]) : S.lang === 'ka' ? (l[6] || l[3]) : l[3];
+
 // ---------- word card ----------
 function show(id) {
   const w = D.W[id - 1], L = D.L[w[1]], P = D.P[w[2]];
   $('lem').textContent = L[1];
   $('cnt').textContent = t().times(L[5]);
-  $('gl').textContent = S.lang === 'ru' ? (L[4] || L[3]) : L[3];
-  $('ps').textContent = S.lang === 'ru' ? P[1] : P[0];
+  $('gl').textContent = gloss(L);
+  $('ps').textContent = S.lang === 'ru' ? P[1] : S.lang === 'ka' ? (P[2] || P[0]) : P[0];
   $('same').textContent = sameLem === w[1] ? t().unsame : t().same;
   $('same').dataset.l = w[1];
   $('dc').hidden = true; $('pd').hidden = true; $('par').hidden = true; parOpen = false;
@@ -304,7 +327,7 @@ function show(id) {
   if (sel) sel.classList.add('sel');
 }
 let NOUNS = null, parOpen = false, curNoun = null;
-const loadNouns = () => NOUNS || (NOUNS = fetch('data/nouns.json?v=20261128i').then(r => r.json()).catch(() => ({})));
+const loadNouns = () => NOUNS || (NOUNS = fetch('data/nouns.json?v=20261128j').then(r => r.json()).catch(() => ({})));
 const plainAcc = f => (f || '').normalize('NFD').replace(/\u0300/g, '\u0301').normalize('NFC').toLowerCase();
 function nounInfo(lem, form) {
   loadNouns().then(N => {

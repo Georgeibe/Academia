@@ -71,3 +71,5 @@ Corrections and suggestions are welcome as issues or pull requests.
 ## Experimental Georgian translation (Anabasis)
 
 `tools/kat_anabasisN.json` holds an experimental Georgian translation by section, made for this site directly from the Greek. It is injected into `data/anabasis-N.json` as `tr.ka` (or pass it as the 8th argument of `export_site.py`). All seven books are done.
+
+Georgian word meanings and Georgian grammatical labels: `tools/gloss_ka.json` holds a Georgian gloss for every lemma (verbs are given as verbal nouns, as in Georgian dictionaries); `tools/gloss_ru_fixes.json` lists Russian glosses corrected during the review (the same corrections are in `glosses_ru.tsv`). `export_site.py` does not know about them, so after any re-export run `python3 tools/apply_glosses.py`: it adds the Georgian gloss as the 7th field of each lemma entry and a Georgian label as the 3rd field of each parse entry in `data/*.json`.
