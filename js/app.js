@@ -18,8 +18,8 @@ const T = {
     tagline: 'Ancient Greek, word by word', lib_h: 'Read Ancient Greek, word by word',
     lib_p: 'Tap any word to see its dictionary form, meaning and full parsing. Verbs are coloured by tense. Translations can be shown under each section.',
     open: 'Read', soon: 'Coming soon', how_h: 'How to read',
-    how_p: 'Underlined words are finite verbs; participles and infinitives have their own markings (bold italic and dotted underline by default — you can change them in the toolbar above the text). The colour shows the tense; tap a colour to switch it off. Use the language switch at the top for English or Russian meanings.',
-    ptc: 'Participles', inf: 'Infinitives', sty: { bi: 'bold italic', it: 'italic', dot: 'dotted underline', dash: 'dashed underline', wavy: 'wavy underline', dbl: 'double underline', over: 'line above', box: 'frame', strike: 'strikethrough' },
+    how_p: 'Underlined words are finite verbs; participles and infinitives have their own markings (bold italic and dotted underline by default — you can change them with the ⚙ button). The colour shows the tense; tap a colour to switch it off. Use the language switch at the top for English or Russian meanings.',
+    marks: 'Marking of participles and infinitives', ptc: 'Participles', inf: 'Infinitives', sty: { bi: 'bold italic', it: 'italic', dot: 'dotted underline', dash: 'dashed underline', wavy: 'wavy underline', dbl: 'double underline', over: 'line above', box: 'frame', strike: 'strikethrough' },
     back: '← Library', tense: { P: 'Present', I: 'Imperfect', F: 'Future', A: 'Aorist', X: 'Perfect', Y: 'Pluperfect' },
     trans: 'Translation', none: 'None', en: 'English', ru: 'Russian', ka: 'Georgian', ru_soon: 'Russian (coming soon)',
     vocab: 'Page vocabulary', vocab_h: p => `Words on this page (${p})`,
@@ -36,8 +36,8 @@ const T = {
     tagline: 'Древнегреческий, слово за словом', lib_h: 'Читайте по-древнегречески, слово за словом',
     lib_p: 'Нажмите на любое слово, чтобы увидеть его словарную форму, значение и полный разбор. Глаголы окрашены по времени. Перевод можно показать под каждым разделом.',
     open: 'Читать', soon: 'Скоро', how_h: 'Как читать',
-    how_p: 'Подчёркнуты личные формы глагола; у причастий и инфинитивов своё обозначение (по умолчанию жирный курсив и пунктирное подчёркивание — его можно поменять в панели над текстом). Цвет показывает время; нажмите на цвет, чтобы его отключить. Переключатель языка вверху меняет значения слов на английские или русские.',
-    ptc: 'Причастия', inf: 'Инфинитивы', sty: { bi: 'жирный курсив', it: 'курсив', dot: 'пунктир снизу', dash: 'штрихи снизу', wavy: 'волна снизу', dbl: 'двойная линия', over: 'линия сверху', box: 'рамка', strike: 'зачёркивание' },
+    how_p: 'Подчёркнуты личные формы глагола; у причастий и инфинитивов своё обозначение (по умолчанию жирный курсив и пунктирное подчёркивание — его можно поменять кнопкой ⚙). Цвет показывает время; нажмите на цвет, чтобы его отключить. Переключатель языка вверху меняет значения слов на английские или русские.',
+    marks: 'Обозначение причастий и инфинитивов', ptc: 'Причастия', inf: 'Инфинитивы', sty: { bi: 'жирный курсив', it: 'курсив', dot: 'пунктир снизу', dash: 'штрихи снизу', wavy: 'волна снизу', dbl: 'двойная линия', over: 'линия сверху', box: 'рамка', strike: 'зачёркивание' },
     back: '← Библиотека', tense: { P: 'Настоящее', I: 'Имперфект', F: 'Будущее', A: 'Аорист', X: 'Перфект', Y: 'Плюсквамперфект' },
     trans: 'Перевод', none: 'Нет', en: 'Английский', ru: 'Русский', ka: 'Грузинский', ru_soon: 'Русский (скоро)',
     vocab: 'Слова страницы', vocab_h: p => `Слова на этой странице (${p})`,
@@ -54,8 +54,8 @@ const T = {
     tagline: 'ძველი ბერძნული, სიტყვა-სიტყვით', lib_h: 'იკითხეთ ძველბერძნულად, სიტყვა-სიტყვით',
     lib_p: 'დააჭირეთ ნებისმიერ სიტყვას და ნახავთ მის ლექსიკონურ ფორმას, მნიშვნელობასა და სრულ გრამატიკულ ანალიზს. ზმნები დროების მიხედვით არის გაფერადებული. ყოველი მონაკვეთის ქვეშ შეგიძლიათ თარგმანის ჩვენება.',
     open: 'კითხვა', soon: 'მალე', how_h: 'როგორ ვიკითხოთ',
-    how_p: 'ხაზგასმულია ზმნის პირიანი ფორმები; მიმღეობებსა და ინფინიტივებს საკუთარი აღნიშვნა აქვთ (ნაგულისხმევად მუქი დახრილი და წერტილოვანი ხაზი — შეგიძლიათ შეცვალოთ ტექსტის ზედა პანელში). ფერი დროს აჩვენებს; ფერზე დაჭერით მას გამორთავთ.',
-    ptc: 'მიმღეობები', inf: 'ინფინიტივები', sty: { bi: 'მუქი დახრილი', it: 'დახრილი', dot: 'წერტილოვანი ხაზი', dash: 'წყვეტილი ხაზი', wavy: 'ტალღოვანი ხაზი', dbl: 'ორმაგი ხაზი', over: 'ხაზი ზემოთ', box: 'ჩარჩო', strike: 'გადახაზვა' },
+    how_p: 'ხაზგასმულია ზმნის პირიანი ფორმები; მიმღეობებსა და ინფინიტივებს საკუთარი აღნიშვნა აქვთ (ნაგულისხმევად მუქი დახრილი და წერტილოვანი ხაზი — შეგიძლიათ შეცვალოთ ⚙ ღილაკით). ფერი დროს აჩვენებს; ფერზე დაჭერით მას გამორთავთ.',
+    marks: 'მიმღეობებისა და ინფინიტივების აღნიშვნა', ptc: 'მიმღეობები', inf: 'ინფინიტივები', sty: { bi: 'მუქი დახრილი', it: 'დახრილი', dot: 'წერტილოვანი ხაზი', dash: 'წყვეტილი ხაზი', wavy: 'ტალღოვანი ხაზი', dbl: 'ორმაგი ხაზი', over: 'ხაზი ზემოთ', box: 'ჩარჩო', strike: 'გადახაზვა' },
     back: '← ბიბლიოთეკა', tense: { P: 'აწმყო', I: 'იმპერფექტი', F: 'მყოფადი', A: 'აორისტი', X: 'პერფექტი', Y: 'პლუსკვამპერფექტი' },
     trans: 'თარგმანი', none: 'არა', en: 'ინგლისური', ru: 'რუსული', ka: 'ქართული', ru_soon: 'რუსული (მალე)',
     vocab: 'გვერდის ლექსიკა', vocab_h: p => `ამ გვერდის სიტყვები (${p})`,
@@ -127,7 +127,7 @@ async function reader(id, b, pg) {
   const file = x.books ? x.books[b] : x.file;
   if (!cache[file]) {
     $('app').innerHTML = `<p class="wrap empty">${esc(t().loading)}</p>`;
-    try { cache[file] = await (await fetch(file + '?v=20261127e')).json(); }
+    try { cache[file] = await (await fetch(file + '?v=20261127f')).json(); }
     catch (e) { $('app').innerHTML = `<p class="wrap empty">${esc(t().failed)}</p>`; return; }
   }
   D = cache[file]; text = x; book = b;
@@ -145,16 +145,12 @@ async function reader(id, b, pg) {
       ${bookNav}
       <nav class="pages" aria-label="${esc(x.unit[S.lang])}">${pages.map(p => `<button data-p="${p}" aria-current="${p === page}">${p}</button>`).join('')}</nav>
       <div class="ctrl">
-        <div class="key" role="group">${TENSES.map(k => `<button class="T${k}" data-t="${k}" aria-pressed="${!!S.on[k]}"><i></i>${esc(t().tense[k])}</button>`).join('')}</div>
+        <div class="key" role="group">${TENSES.map(k => `<button class="T${k}" data-t="${k}" aria-pressed="${!!S.on[k]}"><i></i>${esc(t().tense[k])}</button>`).join('')}<span class="gearw"><button class="gear" id="gear" aria-expanded="false" title="${esc(t().marks)}" aria-label="${esc(t().marks)}">⚙</button><div class="marks" id="marks" hidden><div><label for="mptc">${esc(t().ptc)}</label><select id="mptc">${STY.map(k => `<option value="${k}" ${S.ptc === k ? 'selected' : ''}>${esc(t().sty[k])}</option>`).join('')}</select></div><div><label for="minf">${esc(t().inf)}</label><select id="minf">${STY.map(k => `<option value="${k}" ${S.inf === k ? 'selected' : ''}>${esc(t().sty[k])}</option>`).join('')}</select></div></div></span></div>
         <div class="opts">
           <label for="tr">${esc(t().trans)}</label>
           <select id="tr"><option value="none">${esc(t().none)}</option><option value="en" ${hasEn ? '' : 'disabled'}>${esc(t().en)}</option>
             <option value="ru" ${hasRu ? '' : 'disabled'}>${esc(hasRu ? (x.ruLabel ? x.ruLabel[S.lang] : t().ru) : t().ru_soon)}</option>${hasKa ? `<option value="ka">${esc(t().ka)}</option>` : ''}</select>
           <button class="btn" id="vb" aria-pressed="${S.vocab}">${esc(t().vocab)}</button>
-        </div>
-        <div class="opts">
-          <label for="mptc">${esc(t().ptc)}</label><select id="mptc">${STY.map(k => `<option value="${k}" ${S.ptc === k ? 'selected' : ''}>${esc(t().sty[k])}</option>`).join('')}</select>
-          <label for="minf">${esc(t().inf)}</label><select id="minf">${STY.map(k => `<option value="${k}" ${S.inf === k ? 'selected' : ''}>${esc(t().sty[k])}</option>`).join('')}</select>
         </div>
       </div>
     </div></div>
@@ -233,6 +229,8 @@ function route() {
 // ---------- events ----------
 document.querySelector('.lang').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setLang(b.dataset.lang); });
 $('app').addEventListener('click', e => {
+  if (e.target.id === 'gear') { const m = $('marks'); m.hidden = !m.hidden; e.target.setAttribute('aria-expanded', !m.hidden); return; }
+  if ($('marks') && !$('marks').hidden && !e.target.closest('.gearw')) { $('marks').hidden = true; $('gear').setAttribute('aria-expanded', 'false'); }
   const bb = e.target.closest('.books button');
   if (bb) { location.hash = href(text, +bb.dataset.b); return; }
   const pb = e.target.closest('.pages button');
