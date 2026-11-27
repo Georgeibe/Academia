@@ -73,9 +73,17 @@ main.read{padding:18px 0 260px}
 .w:hover{background:var(--soft)}
 .vb{color:var(--c);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.3em;text-decoration-skip-ink:none}
 .vb.off{color:inherit;text-decoration:none}
-.vb.ptc{font-style:italic;font-weight:700;text-decoration:none}
-.vb.inf{text-decoration:line-through;text-decoration-thickness:2px}
-.vb.off.ptc,.vb.off.inf{font-style:normal;font-weight:400;text-decoration:none}
+.vb.ptc,.vb.inf{text-decoration:none}
+.ptc-bi .vb.ptc,.inf-bi .vb.inf{font-style:italic;font-weight:700}
+.ptc-it .vb.ptc,.inf-it .vb.inf{font-style:italic}
+.ptc-dot .vb.ptc,.inf-dot .vb.inf{text-decoration:underline dotted;text-decoration-thickness:3px}
+.ptc-dash .vb.ptc,.inf-dash .vb.inf{text-decoration:underline dashed;text-decoration-thickness:2px}
+.ptc-wavy .vb.ptc,.inf-wavy .vb.inf{text-decoration:underline wavy;text-decoration-thickness:1.5px}
+.ptc-dbl .vb.ptc,.inf-dbl .vb.inf{text-decoration:underline double;text-decoration-thickness:1.5px}
+.ptc-over .vb.ptc,.inf-over .vb.inf{text-decoration:overline;text-decoration-thickness:2px}
+.ptc-box .vb.ptc,.inf-box .vb.inf{outline:1.5px solid var(--c);outline-offset:1px;border-radius:4px}
+.ptc-strike .vb.ptc,.inf-strike .vb.inf{text-decoration:line-through;text-decoration-thickness:2px}
+.read .vb.off{font-style:normal;font-weight:400;text-decoration:none;outline:none}
 .same{box-shadow:inset 0 -3px 0 var(--link)}
 .sel{background:var(--hi)!important}
 .TP{--c:var(--TP)}.TI{--c:var(--TI)}.TF{--c:var(--TF)}.TA{--c:var(--TA)}.TX{--c:var(--TX)}.TY{--c:var(--TY)}
@@ -106,3 +114,5 @@ main.read{padding:18px 0 260px}
 footer{border-top:1px solid var(--line);color:var(--mute);font-size:13px;padding:18px 0 32px}
 @media (prefers-reduced-motion:no-preference){#card.on{animation:up .18s ease-out}@keyframes up{from{opacity:0;translate:0 10px}}}
 @media (max-width:600px){.bar{position:static}.sec{grid-template-columns:2.4em minmax(0,1fr);gap:0 6px}.brand small{display:none}.title h1{font-size:19px}}
+
+.opts select{margin-right:.6em}

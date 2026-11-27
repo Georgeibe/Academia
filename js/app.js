@@ -18,7 +18,8 @@ const T = {
     tagline: 'Ancient Greek, word by word', lib_h: 'Read Ancient Greek, word by word',
     lib_p: 'Tap any word to see its dictionary form, meaning and full parsing. Verbs are coloured by tense. Translations can be shown under each section.',
     open: 'Read', soon: 'Coming soon', how_h: 'How to read',
-    how_p: 'Underlined words are finite verbs, bold italic words are participles and struck-through words are infinitives. The colour shows the tense; tap a colour to switch it off. Use the language switch at the top for English or Russian meanings.',
+    how_p: 'Underlined words are finite verbs; participles and infinitives have their own markings (bold italic and dotted underline by default — you can change them in the toolbar above the text). The colour shows the tense; tap a colour to switch it off. Use the language switch at the top for English or Russian meanings.',
+    ptc: 'Participles', inf: 'Infinitives', sty: { bi: 'bold italic', it: 'italic', dot: 'dotted underline', dash: 'dashed underline', wavy: 'wavy underline', dbl: 'double underline', over: 'line above', box: 'frame', strike: 'strikethrough' },
     back: '← Library', tense: { P: 'Present', I: 'Imperfect', F: 'Future', A: 'Aorist', X: 'Perfect', Y: 'Pluperfect' },
     trans: 'Translation', none: 'None', en: 'English', ru: 'Russian', ka: 'Georgian', ru_soon: 'Russian (coming soon)',
     vocab: 'Page vocabulary', vocab_h: p => `Words on this page (${p})`,
@@ -35,7 +36,8 @@ const T = {
     tagline: 'Древнегреческий, слово за словом', lib_h: 'Читайте по-древнегречески, слово за словом',
     lib_p: 'Нажмите на любое слово, чтобы увидеть его словарную форму, значение и полный разбор. Глаголы окрашены по времени. Перевод можно показать под каждым разделом.',
     open: 'Читать', soon: 'Скоро', how_h: 'Как читать',
-    how_p: 'Подчёркнуты личные формы глагола, жирным курсивом выделены причастия, зачёркнуты инфинитивы. Цвет показывает время; нажмите на цвет, чтобы его отключить. Переключатель языка вверху меняет значения слов на английские или русские.',
+    how_p: 'Подчёркнуты личные формы глагола; у причастий и инфинитивов своё обозначение (по умолчанию жирный курсив и пунктирное подчёркивание — его можно поменять в панели над текстом). Цвет показывает время; нажмите на цвет, чтобы его отключить. Переключатель языка вверху меняет значения слов на английские или русские.',
+    ptc: 'Причастия', inf: 'Инфинитивы', sty: { bi: 'жирный курсив', it: 'курсив', dot: 'пунктир снизу', dash: 'штрихи снизу', wavy: 'волна снизу', dbl: 'двойная линия', over: 'линия сверху', box: 'рамка', strike: 'зачёркивание' },
     back: '← Библиотека', tense: { P: 'Настоящее', I: 'Имперфект', F: 'Будущее', A: 'Аорист', X: 'Перфект', Y: 'Плюсквамперфект' },
     trans: 'Перевод', none: 'Нет', en: 'Английский', ru: 'Русский', ka: 'Грузинский', ru_soon: 'Русский (скоро)',
     vocab: 'Слова страницы', vocab_h: p => `Слова на этой странице (${p})`,
@@ -52,7 +54,8 @@ const T = {
     tagline: 'ძველი ბერძნული, სიტყვა-სიტყვით', lib_h: 'იკითხეთ ძველბერძნულად, სიტყვა-სიტყვით',
     lib_p: 'დააჭირეთ ნებისმიერ სიტყვას და ნახავთ მის ლექსიკონურ ფორმას, მნიშვნელობასა და სრულ გრამატიკულ ანალიზს. ზმნები დროების მიხედვით არის გაფერადებული. ყოველი მონაკვეთის ქვეშ შეგიძლიათ თარგმანის ჩვენება.',
     open: 'კითხვა', soon: 'მალე', how_h: 'როგორ ვიკითხოთ',
-    how_p: 'ხაზგასმულია ზმნის პირიანი ფორმები, მუქი დახრილით — მიმღეობები, გადახაზულია ინფინიტივები. ფერი დროს აჩვენებს; ფერზე დაჭერით მას გამორთავთ. სიტყვების მნიშვნელობა და ანალიზი ჯერჯერობით ინგლისურადაა; ზედა გადამრთველით შეგიძლიათ რუსულზე გადართვა.',
+    how_p: 'ხაზგასმულია ზმნის პირიანი ფორმები; მიმღეობებსა და ინფინიტივებს საკუთარი აღნიშვნა აქვთ (ნაგულისხმევად მუქი დახრილი და წერტილოვანი ხაზი — შეგიძლიათ შეცვალოთ ტექსტის ზედა პანელში). ფერი დროს აჩვენებს; ფერზე დაჭერით მას გამორთავთ.',
+    ptc: 'მიმღეობები', inf: 'ინფინიტივები', sty: { bi: 'მუქი დახრილი', it: 'დახრილი', dot: 'წერტილოვანი ხაზი', dash: 'წყვეტილი ხაზი', wavy: 'ტალღოვანი ხაზი', dbl: 'ორმაგი ხაზი', over: 'ხაზი ზემოთ', box: 'ჩარჩო', strike: 'გადახაზვა' },
     back: '← ბიბლიოთეკა', tense: { P: 'აწმყო', I: 'იმპერფექტი', F: 'მყოფადი', A: 'აორისტი', X: 'პერფექტი', Y: 'პლუსკვამპერფექტი' },
     trans: 'თარგმანი', none: 'არა', en: 'ინგლისური', ru: 'რუსული', ka: 'ქართული', ru_soon: 'რუსული (მალე)',
     vocab: 'გვერდის ლექსიკა', vocab_h: p => `ამ გვერდის სიტყვები (${p})`,
@@ -66,10 +69,11 @@ const T = {
     foot: 'ღია პროექტი. შესწორებებს სიამოვნებით მივიღებთ GitHub-ზე.',
   },
 };
+const STY = ['bi', 'it', 'dot', 'dash', 'wavy', 'dbl', 'over', 'box', 'strike'];
 const TENSES = ['P', 'I', 'F', 'A', 'X', 'Y'];
 
 // ---------- state ----------
-const S = { lang: 'en', tr: 'none', on: { P: 1, I: 1, F: 1, A: 1, X: 1, Y: 1 }, vocab: false, last: {} };
+const S = { lang: 'en', tr: 'none', on: { P: 1, I: 1, F: 1, A: 1, X: 1, Y: 1 }, vocab: false, last: {}, ptc: 'bi', inf: 'dot' };
 try { Object.assign(S, JSON.parse(localStorage.getItem('anagnosis') || '{}')); } catch (e) {}
 const save = () => { try { localStorage.setItem('anagnosis', JSON.stringify(S)); } catch (e) {} };
 const cache = {};
@@ -78,6 +82,8 @@ let D = null, text = null, book = null, page = null, sel = null, sameLem = null;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 if (!T[S.lang]) S.lang = 'en';
+if (!['bi','it','dot','dash','wavy','dbl','over','box','strike'].includes(S.ptc)) S.ptc = 'bi';
+if (!['bi','it','dot','dash','wavy','dbl','over','box','strike'].includes(S.inf)) S.inf = 'dot';
 const t = () => T[S.lang] || T.en;
 const ready = x => !!(x.file || x.books);
 const nBooks = x => x.books ? Object.keys(x.books).length : 0;
@@ -121,7 +127,7 @@ async function reader(id, b, pg) {
   const file = x.books ? x.books[b] : x.file;
   if (!cache[file]) {
     $('app').innerHTML = `<p class="wrap empty">${esc(t().loading)}</p>`;
-    try { cache[file] = await (await fetch(file + '?v=20261127d')).json(); }
+    try { cache[file] = await (await fetch(file + '?v=20261127e')).json(); }
     catch (e) { $('app').innerHTML = `<p class="wrap empty">${esc(t().failed)}</p>`; return; }
   }
   D = cache[file]; text = x; book = b;
@@ -146,9 +152,13 @@ async function reader(id, b, pg) {
             <option value="ru" ${hasRu ? '' : 'disabled'}>${esc(hasRu ? (x.ruLabel ? x.ruLabel[S.lang] : t().ru) : t().ru_soon)}</option>${hasKa ? `<option value="ka">${esc(t().ka)}</option>` : ''}</select>
           <button class="btn" id="vb" aria-pressed="${S.vocab}">${esc(t().vocab)}</button>
         </div>
+        <div class="opts">
+          <label for="mptc">${esc(t().ptc)}</label><select id="mptc">${STY.map(k => `<option value="${k}" ${S.ptc === k ? 'selected' : ''}>${esc(t().sty[k])}</option>`).join('')}</select>
+          <label for="minf">${esc(t().inf)}</label><select id="minf">${STY.map(k => `<option value="${k}" ${S.inf === k ? 'selected' : ''}>${esc(t().sty[k])}</option>`).join('')}</select>
+        </div>
       </div>
     </div></div>
-    <main class="read wrap" id="text"></main>`;
+    <main class="read wrap ptc-${S.ptc} inf-${S.inf}" id="text"></main>`;
   $('tr').value = (S.tr === 'ru' && !hasRu) || (S.tr === 'en' && !hasEn) || (S.tr === 'ka' && !hasKa) ? 'none' : S.tr;
   renderText();
   document.querySelectorAll('.pages [aria-current=true]').forEach(c => c.scrollIntoView({ inline: 'center', block: 'nearest' }));
@@ -233,7 +243,8 @@ $('app').addEventListener('click', e => {
   const w = e.target.closest('.w');
   if (w) show(+w.dataset.i);
 });
-$('app').addEventListener('change', e => { if (e.target.id === 'tr') { S.tr = e.target.value; save(); renderText(); } });
+$('app').addEventListener('change', e => { if (e.target.id === 'tr') { S.tr = e.target.value; save(); renderText(); }
+  if (e.target.id === 'mptc' || e.target.id === 'minf') { const k = e.target.id.slice(1); $('text').classList.remove(k + '-' + S[k]); S[k] = e.target.value; save(); $('text').classList.add(k + '-' + S[k]); } });
 $('app').addEventListener('keydown', e => { if (e.key === 'Enter') { const w = e.target.closest('.w'); if (w) show(+w.dataset.i); } });
 $('close').addEventListener('click', hide);
 $('same').addEventListener('click', e => {
