@@ -130,7 +130,7 @@ async function reader(id, b, pg) {
   const file = x.books ? x.books[b] : x.file;
   if (!cache[file]) {
     $('app').innerHTML = `<p class="wrap empty">${esc(t().loading)}</p>`;
-    try { cache[file] = await (await fetch(file + '?v=20261127g')).json(); }
+    try { cache[file] = await (await fetch(file + '?v=20261128a')).json(); }
     catch (e) { $('app').innerHTML = `<p class="wrap empty">${esc(t().failed)}</p>`; return; }
   }
   D = cache[file]; text = x; book = b;
@@ -204,6 +204,87 @@ function renderText() {
     </div><p class="legend">${esc(t().legend[text.id] || '')}</p>`;
 }
 
+// ---------- syntactic constructions ----------
+const CXT = {
+  ru: {
+    head: 'Конструкция', mem: 'Связанные слова', gov: 'Зависит от', show: 'Показать конструкцию', hide: 'Скрыть конструкцию',
+    auto: 'Определено автоматически по синтаксическому разбору; возможны ошибки.',
+    c: {
+      aci: ['Винительный с инфинитивом', 'accusativus cum infinitivo', 'Подлежащее инфинитива стоит в винительном падеже. Оборот зависит от глагола речи, мысли, желания или приказа и обычно переводится придаточным: «что…», «чтобы…».'],
+      nci: ['Именительный с инфинитивом', 'nominativus cum infinitivo', 'Подлежащее инфинитива то же, что у управляющего глагола (δοκεῖ «кажется», λέγεται «говорят»), поэтому оно и именная часть стоят в именительном: «он, кажется, …», «говорят, что он …».'],
+      gen_abs: ['Родительный самостоятельный', 'genitivus absolutus', 'Причастие и его подлежащее стоят в родительном и грамматически не связаны с остальным предложением. Переводится придаточным: «когда…», «так как…», «хотя…», «если…».'],
+      acc_abs: ['Винительный самостоятельный', 'accusativus absolutus', 'Причастие безличного глагола в винительном ср. р. (ἐξόν «хотя можно», δέον «хотя нужно», δόξαν «когда решили»). Употребляется вместо родительного самостоятельного, когда подлежащего нет.'],
+      tygx: ['Дополнительное причастие (τυγχάνω, λανθάνω, φθάνω)', 'participium coniunctum', 'Главный смысл несёт причастие, а глагол лишь добавляет оттенок: τυγχάνω + прич. «как раз, случайно …», λανθάνω + прич. «… незаметно», φθάνω + прич. «… раньше (кого-то)», διατελέω + прич. «постоянно …».'],
+      perc: ['Причастие после глагола восприятия или знания', 'participium in oratione obliqua', 'После «видеть, слышать, знать, узнавать» причастие передаёт содержание восприятия: «увидел, что они приближаются». Переводится придаточным с «что» или «как».'],
+      fut_ptc: ['Будущее причастие цели', 'participium futuri finale', 'Будущее причастие (часто с ὡς) выражает цель: «пришёл, чтобы сражаться». С ὡς цель подаётся как намерение действующего лица.'],
+      art_inf: ['Субстантивированный инфинитив', 'infinitivus cum articulo', 'Инфинитив с артиклем ср. р. ведёт себя как существительное и склоняется через артикль: τὸ μάχεσθαι «сражение», τοῦ μάχεσθαι «сражения», διὰ τὸ εἶναι «из-за того, что был».'],
+      prin: ['πρίν с инфинитивом', 'priusquam', 'После утвердительного главного предложения πρίν + инфинитив значит «прежде чем, до того как». Подлежащее инфинитива, если оно отличается, стоит в винительном.'],
+      hoste_inf: ['ὥστε с инфинитивом', 'consecutio', 'Следствие, которое мыслится как возможное или естественное: «так, чтобы…», «настолько, что могли бы…».'],
+      hoste_ind: ['ὥστε с изъявительным', 'consecutio', 'Действительно наступившее следствие: «так что (и на самом деле)…».'],
+      pot_opt: ['Потенциальный оптатив', 'optativus potentialis', 'Оптатив с ἄν выражает возможность или вежливое утверждение: «мог бы», «пожалуй». С οὐ — «вряд ли», «не смог бы».'],
+      unreal: ['Ирреальное условие', 'irrealis', 'Прошедшее время изъявительного наклонения с ἄν описывает то, чего на деле нет или не было: имперфект — «…бы» (сейчас), аорист — «…бы» (в прошлом).'],
+      an_inf: ['ἄν при инфинитиве или причастии', 'potentialis in oratione obliqua', 'В косвенной речи ἄν при инфинитиве или причастии сохраняет значение возможности или нереальности, которое в прямой речи имел оптатив или изъявительное с ἄν.'],
+      obl_opt: ['Оптатив косвенной речи', 'optativus obliquus', 'После прошедшего времени в главном предложении глагол придаточного (ὅτι, ὡς, косвенный вопрос) может стоять в оптативе. По-русски переводится обычным изъявительным: «сказал, что он ушёл».'],
+      iter_opt: ['Повторяющееся действие в прошлом', 'optativus iterativus', 'Оптатив во временном или относительном придаточном (ἐπεί, ὁπότε, ὅστις) после прошедшего времени означает повторение: «всякий раз, когда…».'],
+      final_opt: ['Придаточное цели или старания', 'optativus finalis', 'После прошедшего времени глагол в придаточном цели (ἵνα, ὅπως, ὡς) может стоять в оптативе вместо конъюнктива: «чтобы…».'],
+      ei_opt: ['εἰ с оптативом', 'condicio potentialis / iterativa', 'Условие с εἰ + оптатив: либо «если бы (вдруг)…» о будущем (обычно с ἄν + оптатив в главном), либо «всякий раз, если…» о прошлом, либо косвенный вопрос «ли».'],
+      wish_opt: ['Оптатив желания', 'optativus cupitivus', 'Оптатив без ἄν (часто с εἴθε, εἰ γάρ) выражает пожелание: «да будет…», «о если бы…».'],
+    },
+  },
+  en: {
+    head: 'Construction', mem: 'Related words', gov: 'Depends on', show: 'Show construction', hide: 'Hide construction',
+    auto: 'Detected automatically from the syntactic parse; errors are possible.',
+    c: {
+      aci: ['Accusative and infinitive', 'accusativus cum infinitivo', 'The subject of the infinitive is in the accusative. It depends on a verb of saying, thinking, wishing or ordering and is usually translated with a clause: “that…”.'],
+      nci: ['Nominative and infinitive', 'nominativus cum infinitivo', 'The infinitive has the same subject as the governing verb (δοκεῖ “seems”, λέγεται “is said”), so subject and predicate stay in the nominative: “he seems to be…”.'],
+      gen_abs: ['Genitive absolute', 'genitivus absolutus', 'A participle and its subject in the genitive, grammatically independent of the rest of the sentence. Translate with a clause: “when…”, “since…”, “although…”, “if…”.'],
+      acc_abs: ['Accusative absolute', 'accusativus absolutus', 'A neuter accusative participle of an impersonal verb (ἐξόν “although it was possible”, δέον “it being necessary”, δόξαν “when it was decided”), used instead of a genitive absolute when there is no subject.'],
+      tygx: ['Supplementary participle (τυγχάνω, λανθάνω, φθάνω)', 'participium coniunctum', 'The participle carries the main idea; the verb adds a nuance: τυγχάνω + ptc. “happen to …”, λανθάνω + ptc. “… unnoticed”, φθάνω + ptc. “… first”, διατελέω + ptc. “keep on …”.'],
+      perc: ['Participle after a verb of perceiving or knowing', 'participium in oratione obliqua', 'After “see, hear, know, learn” the participle gives the content of the perception: “saw that they were approaching”.'],
+      fut_ptc: ['Future participle of purpose', 'participium futuri finale', 'A future participle (often with ὡς) expresses purpose: “came to fight”. With ὡς the purpose is presented as the subject’s intention.'],
+      art_inf: ['Articular infinitive', 'infinitivus cum articulo', 'An infinitive with the neuter article works as a noun and is declined through the article: τὸ μάχεσθαι “fighting”, διὰ τὸ εἶναι “because of being”.'],
+      prin: ['πρίν with infinitive', 'priusquam', 'After an affirmative main clause πρίν + infinitive means “before”. A different subject of the infinitive is in the accusative.'],
+      hoste_inf: ['ὥστε with infinitive', 'consecutio', 'A result regarded as possible or natural: “so as to…”.'],
+      hoste_ind: ['ὥστε with indicative', 'consecutio', 'A result that actually happened: “so that (in fact)…”.'],
+      pot_opt: ['Potential optative', 'optativus potentialis', 'The optative with ἄν expresses possibility or a polite statement: “could”, “might”, “would”.'],
+      unreal: ['Contrary-to-fact', 'irrealis', 'A past tense of the indicative with ἄν describes what is or was not so: imperfect “would (now)”, aorist “would have”.'],
+      an_inf: ['ἄν with infinitive or participle', 'potentialis in oratione obliqua', 'In indirect speech ἄν with an infinitive or participle keeps the potential or unreal sense of an optative or indicative with ἄν in direct speech.'],
+      obl_opt: ['Optative of indirect discourse', 'optativus obliquus', 'After a past tense in the main clause, the verb of a ὅτι/ὡς clause or indirect question may be put into the optative. Translate as an ordinary indicative.'],
+      iter_opt: ['Repeated action in the past', 'optativus iterativus', 'An optative in a temporal or relative clause (ἐπεί, ὁπότε, ὅστις) after a past tense means repetition: “whenever…”.'],
+      final_opt: ['Purpose or effort clause', 'optativus finalis', 'After a past tense the verb of a purpose clause (ἵνα, ὅπως, ὡς) may be in the optative instead of the subjunctive: “in order that…”.'],
+      ei_opt: ['εἰ with optative', 'condicio potentialis / iterativa', 'A condition with εἰ + optative: “if (ever)… should” about the future, “whenever… if” about the past, or an indirect question “whether”.'],
+      wish_opt: ['Optative of wish', 'optativus cupitivus', 'The optative without ἄν (often with εἴθε, εἰ γάρ) expresses a wish: “may…”, “if only…”.'],
+    },
+  },
+  ka: {
+    head: 'კონსტრუქცია', mem: 'დაკავშირებული სიტყვები', gov: 'დამოკიდებულია', show: 'კონსტრუქციის ჩვენება', hide: 'კონსტრუქციის დამალვა',
+    auto: 'განსაზღვრულია ავტომატურად სინტაქსური ანალიზით; შეცდომები შესაძლებელია.',
+  },
+};
+CXT.ka.c = CXT.en.c;
+let cxOn = true, cxCur = [];
+function cxMark(on) {
+  document.querySelectorAll('.cx-me,.cx-m,.cx-g').forEach(e => e.classList.remove('cx-me', 'cx-m', 'cx-g'));
+  if (!on) return;
+  for (const [i, , m, g] of cxCur) {
+    const q = k => document.querySelector(`[data-i="${k + 1}"]`);
+    q(i)?.classList.add('cx-me'); m.forEach(k => q(k)?.classList.add('cx-m')); g.forEach(k => q(k)?.classList.add('cx-g'));
+  }
+}
+function cxShow(id) {
+  if (!D.CX) { D.CX = new Map(); for (const c of D.C || []) { if (!D.CX.has(c[0])) D.CX.set(c[0], []); D.CX.get(c[0]).push(c); } }
+  cxCur = D.CX.get(id - 1) || [];
+  const X = CXT[S.lang] || CXT.en, words = ks => ks.map(k => D.W[k][0]).join(' ');
+  $('cx').innerHTML = cxCur.map(([, code, m, g]) => {
+    const [name, lat, ex] = X.c[code];
+    return `<div class="cxb"><div class="cxh">${esc(X.head)}</div><div class="cxn">${esc(name)} <span class="lat">· ${esc(lat)}</span></div>
+      <div class="cxe">${esc(ex)}</div>${m.length ? `<div class="cxw">${esc(X.mem)}: <b>${esc(words(m))}</b></div>` : ''}${g.length ? `<div class="cxw">${esc(X.gov)}: <b>${esc(words(g))}</b></div>` : ''}</div>`;
+  }).join('') + (cxCur.length ? `<p class="note">${esc(X.auto)}</p>` : '');
+  $('cx').hidden = !cxCur.length; $('cxt').hidden = !cxCur.length;
+  $('cxt').textContent = cxOn ? X.hide : X.show;
+  cxMark(cxOn && cxCur.length);
+}
+
 // ---------- word card ----------
 function show(id) {
   const w = D.W[id - 1], L = D.L[w[1]], P = D.P[w[2]];
@@ -215,13 +296,14 @@ function show(id) {
   $('same').dataset.l = w[1];
   $('dc').hidden = true; $('pd').hidden = true; $('par').hidden = true; parOpen = false;
   if (L[2] === 'noun') nounInfo(L[0], w[0]);
+  cxShow(id);
   $('card').classList.add('on');
   if (sel) sel.classList.remove('sel');
   sel = document.querySelector(`[data-i="${id}"]`);
   if (sel) sel.classList.add('sel');
 }
 let NOUNS = null, parOpen = false, curNoun = null;
-const loadNouns = () => NOUNS || (NOUNS = fetch('data/nouns.json?v=20261127g').then(r => r.json()).catch(() => ({})));
+const loadNouns = () => NOUNS || (NOUNS = fetch('data/nouns.json?v=20261128a').then(r => r.json()).catch(() => ({})));
 const plainAcc = f => (f || '').normalize('NFD').replace(/\u0300/g, '\u0301').normalize('NFC').toLowerCase();
 function nounInfo(lem, form) {
   loadNouns().then(N => {
@@ -246,7 +328,7 @@ function paradigmHTML() {
   if (st.includes('g')) h += `<p class="note">${esc(t().recon)}</p>`;
   return h;
 }
-function hide() { $('card').classList.remove('on'); if (sel) sel.classList.remove('sel'); sel = null; }
+function hide() { cxMark(false); $('card').classList.remove('on'); if (sel) sel.classList.remove('sel'); sel = null; }
 
 // ---------- routing ----------
 function route() {
@@ -276,6 +358,10 @@ $('app').addEventListener('change', e => { if (e.target.id === 'tr') { S.tr = e.
   if (e.target.id === 'mptc' || e.target.id === 'minf') { const k = e.target.id.slice(1); $('text').classList.remove(k + '-' + S[k]); S[k] = e.target.value; save(); $('text').classList.add(k + '-' + S[k]); } });
 $('app').addEventListener('keydown', e => { if (e.key === 'Enter') { const w = e.target.closest('.w'); if (w) show(+w.dataset.i); } });
 $('close').addEventListener('click', hide);
+$('cxt').addEventListener('click', () => {
+  cxOn = !cxOn; const X = CXT[S.lang] || CXT.en;
+  $('cxt').textContent = cxOn ? X.hide : X.show; cxMark(cxOn);
+});
 $('par').addEventListener('click', () => {
   parOpen = !parOpen;
   if (parOpen) $('pd').innerHTML = paradigmHTML();

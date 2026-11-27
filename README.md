@@ -63,3 +63,7 @@ Corrections and suggestions are welcome as issues or pull requests.
 ## Noun declensions
 
 `data/nouns.json` gives every noun its declension, gender and a full paradigm. It is built by `tools/noun_attest.py` (attested forms from GLAUx Attic prose: Xenophon, Plato, Thucydides, Lysias, Demosthenes, Isocrates) and `tools/noun_build.py` / `tools/noun_gen.py` (rule-based generation with accent placement). Attested forms take priority. Cells that are not attested are generated and shown in grey as reconstructed.
+
+## Syntactic constructions
+
+`tools/constructions.py treebank.xml data/<text>.json [book]` detects constructions in the dependency trees (Gorman/GLAUx) and writes `C` into the site data file. Run it after `export_site.py`, since the export overwrites the data file. Detected: accusative/nominative + infinitive, genitive/accusative absolute, supplementary participles (τυγχάνω, λανθάνω, φθάνω, διατελέω), participles after verbs of perception, future participle of purpose, articular infinitive, πρίν/ὥστε + infinitive, ὥστε + indicative, potential optative, contrary-to-fact, ἄν with infinitive/participle, oblique, iterative and final optatives, εἰ + optative, wishes with εἴθε.
