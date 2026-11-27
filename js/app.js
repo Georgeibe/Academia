@@ -30,7 +30,7 @@ const T = {
     book: 'Book', books_ready: n => `Book${n > 1 ? 's' : ''} ${n === 1 ? 'I' : 'I–' + ROMAN[n]} available`,
     legend: {
       apology: 'Text, lemmas and parsing: GLAUx corpus (A. Keersmaekers, CC BY-SA 4.0), based on the Perseus Digital Library. English translation: H. N. Fowler (1914), Perseus, CC BY-SA. Russian translation: M. S. Solovyov (1899–1903), public domain. Georgian translation: Levan Berdzenishvili, used with the translator’s permission. Meanings: Greek Study App dictionary (J. Jansen) and written for this site.',
-      anabasis: 'Text: Perseus Digital Library. Lemmas and parsing: GLAUx corpus (A. Keersmaekers, CC BY-SA 4.0), corrected with V. Gorman\'s hand-checked treebank. English translation: C. L. Brownson (1922), Perseus, CC BY-SA. Russian translation: experimental, made for this site directly from the Greek; it may contain errors. Meanings: Greek Study App dictionary (J. Jansen) and written for this site. Georgian translation (Books I–IV so far): experimental, made for this site directly from the Greek; it may contain errors.',
+      anabasis: 'Text: Perseus Digital Library. Lemmas and parsing: GLAUx corpus (A. Keersmaekers, CC BY-SA 4.0), corrected with V. Gorman\'s hand-checked treebank. English translation: C. L. Brownson (1922), Perseus, CC BY-SA. Russian translation: experimental, made for this site directly from the Greek; it may contain errors. Meanings: Greek Study App dictionary (J. Jansen) and written for this site. Georgian translation (Books I–V so far): experimental, made for this site directly from the Greek; it may contain errors.',
     },
     foot: 'Open project. Corrections are welcome on GitHub.',
   },
@@ -49,7 +49,7 @@ const T = {
     book: 'Книга', books_ready: n => n === 1 ? 'Доступна книга I' : `Доступны книги I–${ROMAN[n]}`,
     legend: {
       apology: 'Текст, леммы и разбор: корпус GLAUx (A. Keersmaekers, CC BY-SA 4.0) на основе Perseus Digital Library. Английский перевод: H. N. Fowler (1914), Perseus, CC BY-SA. Русский перевод: М. С. Соловьёв (1899–1903), общественное достояние. Грузинский перевод: Леван Бердзенишвили, публикуется с разрешения переводчика. Значения: словарь Greek Study App (J. Jansen) и составленные для этого сайта.',
-      anabasis: 'Текст: Perseus Digital Library. Леммы и разбор: корпус GLAUx (A. Keersmaekers, CC BY-SA 4.0), исправленный по размеченному вручную корпусу В. Горман. Английский перевод: C. L. Brownson (1922), Perseus, CC BY-SA. Русский перевод: экспериментальный, выполнен для этого сайта непосредственно с греческого; возможны ошибки. Значения: словарь Greek Study App (J. Jansen) и составленные для этого сайта. Грузинский перевод (пока книги I–IV): экспериментальный, сделан для этого сайта прямо с греческого; возможны ошибки.',
+      anabasis: 'Текст: Perseus Digital Library. Леммы и разбор: корпус GLAUx (A. Keersmaekers, CC BY-SA 4.0), исправленный по размеченному вручную корпусу В. Горман. Английский перевод: C. L. Brownson (1922), Perseus, CC BY-SA. Русский перевод: экспериментальный, выполнен для этого сайта непосредственно с греческого; возможны ошибки. Значения: словарь Greek Study App (J. Jansen) и составленные для этого сайта. Грузинский перевод (пока книги I–V): экспериментальный, сделан для этого сайта прямо с греческого; возможны ошибки.',
     },
     foot: 'Открытый проект. Исправления приветствуются на GitHub.',
   },
@@ -68,7 +68,7 @@ const T = {
     book: 'წიგნი', books_ready: n => n === 1 ? 'ხელმისაწვდომია I წიგნი' : `ხელმისაწვდომია I–${ROMAN[n]} წიგნები`,
     legend: {
       apology: 'ტექსტი, ლემები და ანალიზი: კორპუსი GLAUx (A. Keersmaekers, CC BY-SA 4.0), Perseus Digital Library-ის საფუძველზე. ინგლისური თარგმანი: H. N. Fowler (1914), Perseus, CC BY-SA. რუსული თარგმანი: მ. ს. სოლოვიოვი (1899–1903), საზოგადოებრივი საკუთრება. ქართული თარგმანი: ლევან ბერძენიშვილი, ქვეყნდება მთარგმნელის ნებართვით. მნიშვნელობები: Greek Study App-ის ლექსიკონი (J. Jansen) და ამ საიტისთვის შედგენილი.',
-      anabasis: 'ტექსტი: Perseus Digital Library. ლემები და ანალიზი: კორპუსი GLAUx (A. Keersmaekers, CC BY-SA 4.0), შესწორებული ვ. გორმანის ხელით შემოწმებული კორპუსით. ინგლისური თარგმანი: C. L. Brownson (1922), Perseus, CC BY-SA. რუსული თარგმანი: ექსპერიმენტული, შესრულებულია ამ საიტისთვის უშუალოდ ბერძნულიდან; შესაძლოა შეიცავდეს შეცდომებს. მნიშვნელობები: Greek Study App-ის ლექსიკონი (J. Jansen) და ამ საიტისთვის შედგენილი. ქართული თარგმანი (ჯერჯერობით I–IV წიგნები): ექსპერიმენტული, ამ საიტისთვის პირდაპირ ბერძნულიდან შესრულებული; შესაძლებელია შეცდომები.',
+      anabasis: 'ტექსტი: Perseus Digital Library. ლემები და ანალიზი: კორპუსი GLAUx (A. Keersmaekers, CC BY-SA 4.0), შესწორებული ვ. გორმანის ხელით შემოწმებული კორპუსით. ინგლისური თარგმანი: C. L. Brownson (1922), Perseus, CC BY-SA. რუსული თარგმანი: ექსპერიმენტული, შესრულებულია ამ საიტისთვის უშუალოდ ბერძნულიდან; შესაძლოა შეიცავდეს შეცდომებს. მნიშვნელობები: Greek Study App-ის ლექსიკონი (J. Jansen) და ამ საიტისთვის შედგენილი. ქართული თარგმანი (ჯერჯერობით I–V წიგნები): ექსპერიმენტული, ამ საიტისთვის პირდაპირ ბერძნულიდან შესრულებული; შესაძლებელია შეცდომები.',
     },
     foot: 'ღია პროექტი. შესწორებებს სიამოვნებით მივიღებთ GitHub-ზე.',
   },
@@ -131,7 +131,7 @@ async function reader(id, b, pg) {
   const file = x.books ? x.books[b] : x.file;
   if (!cache[file]) {
     $('app').innerHTML = `<p class="wrap empty">${esc(t().loading)}</p>`;
-    try { cache[file] = await (await fetch(file + '?v=20261128f')).json(); }
+    try { cache[file] = await (await fetch(file + '?v=20261128g')).json(); }
     catch (e) { $('app').innerHTML = `<p class="wrap empty">${esc(t().failed)}</p>`; return; }
   }
   D = cache[file]; text = x; book = b;
@@ -304,7 +304,7 @@ function show(id) {
   if (sel) sel.classList.add('sel');
 }
 let NOUNS = null, parOpen = false, curNoun = null;
-const loadNouns = () => NOUNS || (NOUNS = fetch('data/nouns.json?v=20261128f').then(r => r.json()).catch(() => ({})));
+const loadNouns = () => NOUNS || (NOUNS = fetch('data/nouns.json?v=20261128g').then(r => r.json()).catch(() => ({})));
 const plainAcc = f => (f || '').normalize('NFD').replace(/\u0300/g, '\u0301').normalize('NFC').toLowerCase();
 function nounInfo(lem, form) {
   loadNouns().then(N => {
