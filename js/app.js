@@ -19,6 +19,7 @@ const T = {
     lib_p: 'Tap any word to see its dictionary form, meaning and full parsing. Verbs are coloured by tense. Translations can be shown under each section.',
     open: 'Read', soon: 'Coming soon', how_h: 'How to read',
     how_p: 'Underlined words are finite verbs; participles and infinitives have their own markings (bold italic and dotted underline by default — you can change them with the ⚙ button). The colour shows the tense; tap a colour to switch it off. Use the language switch at the top for English or Russian meanings.',
+    decl: ['', '1st declension', '2nd declension', '3rd declension'], like: 'like', stem: 'stem in', gend: { m: 'masculine', f: 'feminine', n: 'neuter' }, par: 'Declension table', unpar: 'Hide table', cases: ['Nom.', 'Gen.', 'Dat.', 'Acc.', 'Voc.'], sg: 'Singular', pl: 'Plural', recon: 'Grey forms are not found in the corpus and are reconstructed from the pattern.',
     marks: 'Marking of participles and infinitives', ptc: 'Participles', inf: 'Infinitives', sty: { bi: 'bold italic', it: 'italic', dot: 'dotted underline', dash: 'dashed underline', wavy: 'wavy underline', dbl: 'double underline', over: 'line above', box: 'frame', strike: 'strikethrough' },
     back: '← Library', tense: { P: 'Present', I: 'Imperfect', F: 'Future', A: 'Aorist', X: 'Perfect', Y: 'Pluperfect' },
     trans: 'Translation', none: 'None', en: 'English', ru: 'Russian', ka: 'Georgian', ru_soon: 'Russian (coming soon)',
@@ -37,6 +38,7 @@ const T = {
     lib_p: 'Нажмите на любое слово, чтобы увидеть его словарную форму, значение и полный разбор. Глаголы окрашены по времени. Перевод можно показать под каждым разделом.',
     open: 'Читать', soon: 'Скоро', how_h: 'Как читать',
     how_p: 'Подчёркнуты личные формы глагола; у причастий и инфинитивов своё обозначение (по умолчанию жирный курсив и пунктирное подчёркивание — его можно поменять кнопкой ⚙). Цвет показывает время; нажмите на цвет, чтобы его отключить. Переключатель языка вверху меняет значения слов на английские или русские.',
+    decl: ['', 'I склонение', 'II склонение', 'III склонение'], like: 'как', stem: 'основа на', gend: { m: 'муж. р.', f: 'жен. р.', n: 'ср. р.' }, par: 'Парадигма', unpar: 'Скрыть парадигму', cases: ['Им.', 'Род.', 'Дат.', 'Вин.', 'Зват.'], sg: 'Ед. ч.', pl: 'Мн. ч.', recon: 'Серым — формы, которых нет в корпусе; они восстановлены по образцу.',
     marks: 'Обозначение причастий и инфинитивов', ptc: 'Причастия', inf: 'Инфинитивы', sty: { bi: 'жирный курсив', it: 'курсив', dot: 'пунктир снизу', dash: 'штрихи снизу', wavy: 'волна снизу', dbl: 'двойная линия', over: 'линия сверху', box: 'рамка', strike: 'зачёркивание' },
     back: '← Библиотека', tense: { P: 'Настоящее', I: 'Имперфект', F: 'Будущее', A: 'Аорист', X: 'Перфект', Y: 'Плюсквамперфект' },
     trans: 'Перевод', none: 'Нет', en: 'Английский', ru: 'Русский', ka: 'Грузинский', ru_soon: 'Русский (скоро)',
@@ -55,6 +57,7 @@ const T = {
     lib_p: 'დააჭირეთ ნებისმიერ სიტყვას და ნახავთ მის ლექსიკონურ ფორმას, მნიშვნელობასა და სრულ გრამატიკულ ანალიზს. ზმნები დროების მიხედვით არის გაფერადებული. ყოველი მონაკვეთის ქვეშ შეგიძლიათ თარგმანის ჩვენება.',
     open: 'კითხვა', soon: 'მალე', how_h: 'როგორ ვიკითხოთ',
     how_p: 'ხაზგასმულია ზმნის პირიანი ფორმები; მიმღეობებსა და ინფინიტივებს საკუთარი აღნიშვნა აქვთ (ნაგულისხმევად მუქი დახრილი და წერტილოვანი ხაზი — შეგიძლიათ შეცვალოთ ⚙ ღილაკით). ფერი დროს აჩვენებს; ფერზე დაჭერით მას გამორთავთ.',
+    decl: ['', 'I ბრუნება', 'II ბრუნება', 'III ბრუნება'], like: 'როგორც', stem: 'ფუძე', gend: { m: 'მამრ.', f: 'მდედრ.', n: 'საშ.' }, par: 'პარადიგმა', unpar: 'პარადიგმის დამალვა', cases: ['სახ.', 'ნათ.', 'მიც.', 'ბრალდ.', 'წოდ.'], sg: 'მხ.', pl: 'მრ.', recon: 'ნაცრისფრად — კორპუსში დაუდასტურებელი, ნიმუშით აღდგენილი ფორმები.',
     marks: 'მიმღეობებისა და ინფინიტივების აღნიშვნა', ptc: 'მიმღეობები', inf: 'ინფინიტივები', sty: { bi: 'მუქი დახრილი', it: 'დახრილი', dot: 'წერტილოვანი ხაზი', dash: 'წყვეტილი ხაზი', wavy: 'ტალღოვანი ხაზი', dbl: 'ორმაგი ხაზი', over: 'ხაზი ზემოთ', box: 'ჩარჩო', strike: 'გადახაზვა' },
     back: '← ბიბლიოთეკა', tense: { P: 'აწმყო', I: 'იმპერფექტი', F: 'მყოფადი', A: 'აორისტი', X: 'პერფექტი', Y: 'პლუსკვამპერფექტი' },
     trans: 'თარგმანი', none: 'არა', en: 'ინგლისური', ru: 'რუსული', ka: 'ქართული', ru_soon: 'რუსული (მალე)',
@@ -127,7 +130,7 @@ async function reader(id, b, pg) {
   const file = x.books ? x.books[b] : x.file;
   if (!cache[file]) {
     $('app').innerHTML = `<p class="wrap empty">${esc(t().loading)}</p>`;
-    try { cache[file] = await (await fetch(file + '?v=20261127f')).json(); }
+    try { cache[file] = await (await fetch(file + '?v=20261127g')).json(); }
     catch (e) { $('app').innerHTML = `<p class="wrap empty">${esc(t().failed)}</p>`; return; }
   }
   D = cache[file]; text = x; book = b;
@@ -210,10 +213,38 @@ function show(id) {
   $('ps').textContent = S.lang === 'ru' ? P[1] : P[0];
   $('same').textContent = sameLem === w[1] ? t().unsame : t().same;
   $('same').dataset.l = w[1];
+  $('dc').hidden = true; $('pd').hidden = true; $('par').hidden = true; parOpen = false;
+  if (L[2] === 'noun') nounInfo(L[0], w[0]);
   $('card').classList.add('on');
   if (sel) sel.classList.remove('sel');
   sel = document.querySelector(`[data-i="${id}"]`);
   if (sel) sel.classList.add('sel');
+}
+let NOUNS = null, parOpen = false, curNoun = null;
+const loadNouns = () => NOUNS || (NOUNS = fetch('data/nouns.json?v=20261127g').then(r => r.json()).catch(() => ({})));
+const plainAcc = f => (f || '').normalize('NFD').replace(/\u0300/g, '\u0301').normalize('NFC').toLowerCase();
+function nounInfo(lem, form) {
+  loadNouns().then(N => {
+    const n = N[lem];
+    if (!n || !$('card').classList.contains('on')) return;
+    const [d, typ, g] = n;
+    let s = d ? t().decl[d] : '';
+    if (typ && typ !== lem) s += typ.startsWith('-') ? ` (${t().stem} ${typ})` : ` (${t().like} ${typ})`;
+    if (g && t().gend[g]) s += (s ? ', ' : '') + t().gend[g];
+    $('dc').textContent = s; $('dc').hidden = !s;
+    curNoun = { n, form };
+    $('par').hidden = !n[3]; $('par').textContent = t().par;
+  });
+}
+function paradigmHTML() {
+  const { n, form } = curNoun; const F = n[3].split('|'), st = n[4], me = plainAcc(form);
+  const hasPl = F.slice(5).some(Boolean);
+  const cell = i => F[i] ? `<td class="${st[i] === 'g' ? 'rc' : ''}${plainAcc(F[i]) === me ? ' me' : ''}">${esc(F[i])}</td>` : '<td>—</td>';
+  let h = `<table><tr><th></th><th>${esc(t().sg)}</th>${hasPl ? `<th>${esc(t().pl)}</th>` : ''}</tr>`;
+  for (let c = 0; c < 5; c++) h += `<tr><th>${esc(t().cases[c])}</th>${cell(c)}${hasPl ? cell(c + 5) : ''}</tr>`;
+  h += '</table>';
+  if (st.includes('g')) h += `<p class="note">${esc(t().recon)}</p>`;
+  return h;
 }
 function hide() { $('card').classList.remove('on'); if (sel) sel.classList.remove('sel'); sel = null; }
 
@@ -245,6 +276,11 @@ $('app').addEventListener('change', e => { if (e.target.id === 'tr') { S.tr = e.
   if (e.target.id === 'mptc' || e.target.id === 'minf') { const k = e.target.id.slice(1); $('text').classList.remove(k + '-' + S[k]); S[k] = e.target.value; save(); $('text').classList.add(k + '-' + S[k]); } });
 $('app').addEventListener('keydown', e => { if (e.key === 'Enter') { const w = e.target.closest('.w'); if (w) show(+w.dataset.i); } });
 $('close').addEventListener('click', hide);
+$('par').addEventListener('click', () => {
+  parOpen = !parOpen;
+  if (parOpen) $('pd').innerHTML = paradigmHTML();
+  $('pd').hidden = !parOpen; $('par').textContent = parOpen ? t().unpar : t().par;
+});
 $('same').addEventListener('click', e => {
   const l = +e.target.dataset.l; sameLem = sameLem === l ? null : l;
   const id = sel ? +sel.dataset.i : null; renderText(); if (id) show(id);

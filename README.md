@@ -59,3 +59,7 @@ Corrections and suggestions are welcome as issues or pull requests.
 
 Чтобы исправить русское значение слова, отредактируйте `tools/glosses_ru.tsv` и выполните:
 `python3 tools/export_site.py tools/apology.db tools/glosses_ru.tsv tools/eng_fowler_apology.json tools/rus_solovyov_apology.json data/apology.json`
+
+## Noun declensions
+
+`data/nouns.json` gives every noun its declension, gender and a full paradigm. It is built by `tools/noun_attest.py` (attested forms from GLAUx Attic prose: Xenophon, Plato, Thucydides, Lysias, Demosthenes, Isocrates) and `tools/noun_build.py` / `tools/noun_gen.py` (rule-based generation with accent placement). Attested forms take priority. Cells that are not attested are generated and shown in grey as reconstructed.
