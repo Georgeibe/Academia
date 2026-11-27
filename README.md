@@ -70,4 +70,4 @@ Corrections and suggestions are welcome as issues or pull requests.
 
 ## Experimental Georgian translation (Anabasis)
 
-`tools/kat_anabasisN.json` holds an experimental Georgian translation by section, made for this site directly from the Greek. It is injected into `data/anabasis-N.json` as `tr.ka` (or pass it as the 8th argument of `export_site.py`). Books I–VI are done so far.
+`tools/kat_anabasisN.json` holds an experimental Georgian translation by section, made for this site directly from the Greek. It is injected into `data/anabasis-N.json` as `tr.ka` (or pass it as the 8th argument of `export_site.py`). All seven books are done.
