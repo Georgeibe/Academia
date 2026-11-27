@@ -67,3 +67,7 @@ Corrections and suggestions are welcome as issues or pull requests.
 ## Syntactic constructions
 
 `tools/constructions.py treebank.xml data/<text>.json [book]` detects constructions in the dependency trees (Gorman/GLAUx) and writes `C` into the site data file. Run it after `export_site.py`, since the export overwrites the data file. Detected: accusative/nominative + infinitive, genitive/accusative absolute, supplementary participles (τυγχάνω, λανθάνω, φθάνω, διατελέω), participles after verbs of perception, future participle of purpose, articular infinitive, πρίν/ὥστε + infinitive, ὥστε + indicative, potential optative, contrary-to-fact, ἄν with infinitive/participle, oblique, iterative and final optatives, εἰ + optative, wishes with εἴθε.
+
+## Experimental Georgian translation (Anabasis)
+
+`tools/kat_anabasisN.json` holds an experimental Georgian translation by section, made for this site directly from the Greek. It is injected into `data/anabasis-N.json` as `tr.ka` (or pass it as the 8th argument of `export_site.py`). Book I is done so far.
