@@ -141,7 +141,7 @@ async function reader(id, b, pg) {
   const file = x.books ? x.books[b] : x.file;
   if (!cache[file]) {
     $('app').innerHTML = `<p class="wrap empty">${esc(t().loading)}</p>`;
-    try { cache[file] = await (await fetch(file + '?v=20261128q')).json(); }
+    try { cache[file] = await (await fetch(file + '?v=20261128r')).json(); }
     catch (e) { $('app').innerHTML = `<p class="wrap empty">${esc(t().failed)}</p>`; return; }
   }
   D = cache[file]; text = x; book = b;
@@ -363,7 +363,7 @@ const gloss = l => { const g = glossLang(); return g === 'ru' ? (l[4] || l[3]) :
 // ---------- word card ----------
 function show(id) {
   const w = D.W[id - 1], L = D.L[w[1]], P = D.P[w[2]];
-  $('lem').textContent = L[1];
+  $('lem').textContent = L[1]; $('lem').dataset.l = L[0];
   $('cnt').textContent = t().times(L[5]);
   $('gl').textContent = gloss(L);
   $('ps').textContent = S.lang === 'ru' ? P[1] : S.lang === 'ka' ? (P[2] || P[0]) : P[0];
@@ -371,14 +371,35 @@ function show(id) {
   $('same').dataset.l = w[1];
   $('dc').hidden = true; $('pd').hidden = true; $('par').hidden = true; parOpen = false;
   if (L[2] === 'noun') nounInfo(L[0], w[0]);
+  $('gov').hidden = true; if (L[2] === 'verb') govInfo(L[0]);
   cxShow(id);
   $('card').classList.add('on');
   if (sel) sel.classList.remove('sel');
   sel = document.querySelector(`[data-i="${id}"]`);
   if (sel) sel.classList.add('sel');
 }
+// ---------- verb government (data/gov.json: lemma -> [[code, ru, en, ka, form?], ...]) ----------
+let GOV = null;
+const loadGov = () => GOV || (GOV = fetch('data/gov.json?v=20261128r').then(r => r.json()).catch(() => ({})));
+const GOVT = {
+  ru: { h: 'Управление', g: 'род.', d: 'дат.', a: 'вин.', i: 'инф.', p: 'прич.', aa: '2 вин.' },
+  en: { h: 'Government', g: 'gen.', d: 'dat.', a: 'acc.', i: 'inf.', p: 'ptc.', aa: '2 acc.' },
+  ka: { h: 'მართვა', g: 'ნათ.', d: 'მიც.', a: 'ბრალ.', i: 'ინფ.', p: 'მიმღ.', aa: '2 ბრალ.' } };
+const govLabel = (c, X) => '+ ' + (c === 'aa' ? X.aa : c.split('').map(k => X[k]).join(' + '));
+const govCls = c => c === 'i' || c === 'p' ? 'inf' : c[0] === 'g' ? 'gen' : c[0] === 'd' ? 'dat' : 'acc';
+const itl = s => esc(s).replace(/_([^_]+)_/g, '<i>$1</i>');
+function govInfo(lem) {
+  loadGov().then(G => {
+    const rows = G[lem];
+    if (!rows || !$('card').classList.contains('on') || $('lem').dataset.l !== lem) return;
+    const lg = glossLang(), k = lg === 'ru' ? 1 : lg === 'ka' ? 3 : 2, X = GOVT[lg] || GOVT.en;
+    $('gov').innerHTML = `<div class="govh">${esc(X.h)}</div>` + rows.map(r =>
+      `<div class="govr">${r[4] ? `<b lang="grc">${esc(r[4])}</b> ` : ''}<span class="gc ${govCls(r[0])}">${esc(govLabel(r[0], X))}</span> ${itl(r[k] || r[2])}</div>`).join('');
+    $('gov').hidden = false;
+  });
+}
 let NOUNS = null, parOpen = false, curNoun = null;
-const loadNouns = () => NOUNS || (NOUNS = fetch('data/nouns.json?v=20261128q').then(r => r.json()).catch(() => ({})));
+const loadNouns = () => NOUNS || (NOUNS = fetch('data/nouns.json?v=20261128r').then(r => r.json()).catch(() => ({})));
 const plainAcc = f => (f || '').normalize('NFD').replace(/\u0300/g, '\u0301').normalize('NFC').toLowerCase();
 function nounInfo(lem, form) {
   loadNouns().then(N => {

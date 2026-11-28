@@ -74,3 +74,9 @@ Corrections and suggestions are welcome as issues or pull requests.
 `tools/kat_anabasisN.json` holds an experimental Georgian translation by section, made for this site directly from the Greek. It is injected into `data/anabasis-N.json` as `tr.ka` (or pass it as the 8th argument of `export_site.py`). All seven books are done.
 
 Georgian word meanings and Georgian grammatical labels: `tools/gloss_ka.json` holds a Georgian gloss for every lemma (verbs are given as verbal nouns, as in Georgian dictionaries); `tools/gloss_ru_fixes.json` lists Russian glosses corrected during the review (the same corrections are in `glosses_ru.tsv`). `tools/gloss_en_fixes.json` holds English glosses written for this site for words first met in the Cyropaedia (they replace the automatic LSJ extracts). `export_site.py` does not know about them, so after any re-export run `python3 tools/apply_glosses.py`: it adds the Georgian gloss as the 7th field of each lemma entry and a Georgian label as the 3rd field of each parse entry in `data/*.json`.
+
+## Verb government
+`tools/gov.tsv` lists what case or construction each verb takes, one line per construction:
+`lemma|code|ru|en|ka[|form]`. Codes: g d a (gen./dat./acc.), aa (two acc.), ag ad ai di gi dg dp gp ap (combinations; i = infinitive, p = participle), i, p.
+The optional last field is a special form (e.g. πείθομαι, δεῖ). Words in `_..._` are shown in italics.
+Rebuild with `python3 tools/gov_build.py` → `data/gov.json` (shown in the word card under the meaning).
