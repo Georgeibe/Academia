@@ -26,6 +26,7 @@ The site is plain HTML, CSS and JavaScript with no build step. To try it on your
   - `apology.db` is the converted Apology. To fix a Russian meaning, edit `glosses_ru.tsv` and run:
     `python3 tools/export_site.py tools/apology.db tools/glosses_ru.tsv tools/eng_fowler_apology.json tools/rus_solovyov_apology.json data/apology.json apology stephanus tools/kat_berdzenishvili_apology.json`
     For Anabasis book N (1–7): `python3 tools/export_site.py tools/anabasisN.db tools/glosses_ru.tsv tools/eng_brownson_anabasisN.json - data/anabasis-N.json anabasis section` (for books with a file `tools/rus_anabasisN.json`, use it instead of `-`; it is an experimental translation made for this site)
+    For Cyropaedia book N (1–8): `python3 tools/export_site.py tools/cyropaediaN.db tools/glosses_ru.tsv tools/eng_miller_cyropaediaN.json - data/cyropaedia-N.json cyropaedia section`, then `tools/constructions.py` on that book's GLAUx XML (GLAUx file `0032-007.xml`, split by `div_book`) and `python3 tools/apply_glosses.py`. The English translation is Walter Miller's (1914) from Perseus; the parsing is GLAUx's automatic one.
 
 ## Adding a text
 1. Run `tools/build.py` on a GLAUx XML file.

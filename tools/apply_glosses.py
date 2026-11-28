@@ -34,7 +34,7 @@ POS = {'verb': 'ზმნა', 'noun': 'არსებითი სახელ
        'demonstrative pronoun': 'ჩვენებითი ნაცვალსახელი', 'relative pronoun': 'მიმართებითი ნაცვალსახელი',
        'interrogative pronoun': 'კითხვითი ნაცვალსახელი', 'indefinite pronoun': 'განუსაზღვრელობითი ნაცვალსახელი'}
 CASE = {'nominative': 'სახ. ბრ.', 'genitive': 'ნათ. ბრ.', 'dative': 'მიც. ბრ.', 'accusative': 'ბრალდ. ბრ.', 'vocative': 'წოდ. ბრ.'}
-NUM = {'singular': 'მხ. რ.', 'plural': 'მრ. რ.', 'dual (dualis)': 'ორობითი რიცხვი (dualis)'}
+NUM = {'singular': 'მხ. რ.', 'plural': 'მრ. რ.', 'dual (dualis)': 'ორობითი რიცხვი (dualis)', 'dual': 'ორობითი რიცხვი (dualis)'}
 GEN = {'masculine': 'მამრ. სქ.', 'feminine': 'მდედრ. სქ.', 'neuter': 'საშ. სქ.', 'common': 'საერთო სქ.'}
 DEG = {'(comparative)': '(შედარებითი ხარისხი)', '(superlative)': '(აღმატებითი ხარისხი)', '(indeclinable)': '(უბრუნველი)'}
 TENSE = {'present': 'აწმყო', 'imperfect': 'იმპერფექტი', 'future': 'მყოფადი', 'aorist': 'აორისტი', 'perfect': 'პერფექტი',
