@@ -7,7 +7,7 @@
 <meta name="description" content="Read Ancient Greek texts with every word parsed and glossed in English and Russian.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261128k">
+<link rel="stylesheet" href="css/style.css?v=20261128l">
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -17,6 +17,8 @@
     <button data-lang="en" aria-pressed="true">EN</button><button data-lang="ru" aria-pressed="false">RU</button><button data-lang="ka" aria-pressed="false">GE</button>
   </div>
 </div></header>
+<button id="bm" class="bm" hidden aria-pressed="false"><svg viewBox="0 0 24 36" aria-hidden="true"><path d="M1 0h22v34l-11-8-11 8z"/></svg></button>
+<div id="toast" role="status"></div>
 <div id="app"><p class="wrap empty">Loading…</p></div>
 <div id="card" role="dialog" aria-live="polite">
   <button class="x" id="close" aria-label="Close">×</button>
@@ -29,6 +31,6 @@
   <div class="ft"><button id="same"></button><button id="par" hidden></button><button id="cxt" hidden></button></div>
 </div>
 <footer><div class="wrap" id="foot"></div></footer>
-<script src="js/app.js?v=20261128k"></script>
+<script src="js/app.js?v=20261128l"></script>
 </body>
 </html>

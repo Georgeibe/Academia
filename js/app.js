@@ -22,7 +22,7 @@ const T = {
     how_p: 'Underlined words are finite verbs; participles and infinitives have their own markings (bold italic and dotted underline by default — you can change them with the ⚙ button). The colour shows the tense; tap a colour to switch it off. Use the language switch at the top for English or Russian meanings.',
     decl: ['', '1st declension', '2nd declension', '3rd declension'], like: 'like', stem: 'stem in', gend: { m: 'masculine', f: 'feminine', n: 'neuter' }, par: 'Declension table', unpar: 'Hide table', cases: ['Nom.', 'Gen.', 'Dat.', 'Acc.', 'Voc.'], sg: 'Singular', pl: 'Plural', recon: 'Grey forms are not found in the corpus and are reconstructed from the pattern.',
     marks: 'Marking of participles and infinitives', ptc: 'Participles', inf: 'Infinitives', sty: { bi: 'bold italic', it: 'italic', dot: 'dotted underline', dash: 'dashed underline', wavy: 'wavy underline', dbl: 'double underline', over: 'line above', box: 'frame', strike: 'strikethrough' },
-    back: '← Library', tense: { P: 'Present', I: 'Imperfect', F: 'Future', A: 'Aorist', X: 'Perfect', Y: 'Pluperfect' },
+    bm: 'Bookmark', bm_set: w => `Bookmark saved: ${w}`, bm_del: 'Bookmark removed', bm_cont: 'Continue reading', back: '← Library', tense: { P: 'Present', I: 'Imperfect', F: 'Future', A: 'Aorist', X: 'Perfect', Y: 'Pluperfect' },
     trans: 'Translation', none: 'None', en: 'English', ru: 'Russian', ka: 'Georgian', ru_soon: 'Russian (coming soon)',
     vocab: 'Page vocabulary', vocab_h: p => `Words on this page (${p})`,
     times: n => `${n}× in this text`, same: 'Mark all forms on this page', unsame: 'Clear marks',
@@ -41,7 +41,7 @@ const T = {
     how_p: 'Подчёркнуты личные формы глагола; у причастий и инфинитивов своё обозначение (по умолчанию жирный курсив и пунктирное подчёркивание — его можно поменять кнопкой ⚙). Цвет показывает время; нажмите на цвет, чтобы его отключить. Переключатель языка вверху меняет значения слов на английские или русские.',
     decl: ['', 'I склонение', 'II склонение', 'III склонение'], like: 'как', stem: 'основа на', gend: { m: 'муж. р.', f: 'жен. р.', n: 'ср. р.' }, par: 'Парадигма', unpar: 'Скрыть парадигму', cases: ['Им.', 'Род.', 'Дат.', 'Вин.', 'Зват.'], sg: 'Ед. ч.', pl: 'Мн. ч.', recon: 'Серым — формы, которых нет в корпусе; они восстановлены по образцу.',
     marks: 'Обозначение причастий и инфинитивов', ptc: 'Причастия', inf: 'Инфинитивы', sty: { bi: 'жирный курсив', it: 'курсив', dot: 'пунктир снизу', dash: 'штрихи снизу', wavy: 'волна снизу', dbl: 'двойная линия', over: 'линия сверху', box: 'рамка', strike: 'зачёркивание' },
-    back: '← Библиотека', tense: { P: 'Настоящее', I: 'Имперфект', F: 'Будущее', A: 'Аорист', X: 'Перфект', Y: 'Плюсквамперфект' },
+    bm: 'Закладка', bm_set: w => `Закладка сохранена: ${w}`, bm_del: 'Закладка убрана', bm_cont: 'Продолжить чтение', back: '← Библиотека', tense: { P: 'Настоящее', I: 'Имперфект', F: 'Будущее', A: 'Аорист', X: 'Перфект', Y: 'Плюсквамперфект' },
     trans: 'Перевод', none: 'Нет', en: 'Английский', ru: 'Русский', ka: 'Грузинский', ru_soon: 'Русский (скоро)',
     vocab: 'Слова страницы', vocab_h: p => `Слова на этой странице (${p})`,
     times: n => `${n}× в этом тексте`, same: 'Отметить все формы на странице', unsame: 'Снять отметки',
@@ -60,7 +60,7 @@ const T = {
     how_p: 'ხაზგასმულია ზმნის პირიანი ფორმები; მიმღეობებსა და ინფინიტივებს საკუთარი აღნიშვნა აქვთ (ნაგულისხმევად მუქი დახრილი და წერტილოვანი ხაზი — შეგიძლიათ შეცვალოთ ⚙ ღილაკით). ფერი დროს აჩვენებს; ფერზე დაჭერით მას გამორთავთ.',
     decl: ['', 'I ბრუნება', 'II ბრუნება', 'III ბრუნება'], like: 'როგორც', stem: 'ფუძე', gend: { m: 'მამრ.', f: 'მდედრ.', n: 'საშ.' }, par: 'პარადიგმა', unpar: 'პარადიგმის დამალვა', cases: ['სახ.', 'ნათ.', 'მიც.', 'ბრალდ.', 'წოდ.'], sg: 'მხ.', pl: 'მრ.', recon: 'ნაცრისფრად — კორპუსში დაუდასტურებელი, ნიმუშით აღდგენილი ფორმები.',
     marks: 'მიმღეობებისა და ინფინიტივების აღნიშვნა', ptc: 'მიმღეობები', inf: 'ინფინიტივები', sty: { bi: 'მუქი დახრილი', it: 'დახრილი', dot: 'წერტილოვანი ხაზი', dash: 'წყვეტილი ხაზი', wavy: 'ტალღოვანი ხაზი', dbl: 'ორმაგი ხაზი', over: 'ხაზი ზემოთ', box: 'ჩარჩო', strike: 'გადახაზვა' },
-    back: '← ბიბლიოთეკა', tense: { P: 'აწმყო', I: 'იმპერფექტი', F: 'მყოფადი', A: 'აორისტი', X: 'პერფექტი', Y: 'პლუსკვამპერფექტი' },
+    bm: 'სანიშნე', bm_set: w => `სანიშნე შენახულია: ${w}`, bm_del: 'სანიშნე წაშლილია', bm_cont: 'კითხვის გაგრძელება', back: '← ბიბლიოთეკა', tense: { P: 'აწმყო', I: 'იმპერფექტი', F: 'მყოფადი', A: 'აორისტი', X: 'პერფექტი', Y: 'პლუსკვამპერფექტი' },
     trans: 'თარგმანი', none: 'არა', en: 'ინგლისური', ru: 'რუსული', ka: 'ქართული', ru_soon: 'რუსული (მალე)',
     vocab: 'გვერდის ლექსიკა', vocab_h: p => `ამ გვერდის სიტყვები (${p})`,
     times: n => `${n}-ჯერ ამ ტექსტში`, same: 'ამ გვერდზე ყველა ფორმის მონიშვნა', unsame: 'მონიშვნის მოხსნა',
@@ -77,7 +77,7 @@ const STY = ['bi', 'it', 'dot', 'dash', 'wavy', 'dbl', 'over', 'box', 'strike'];
 const TENSES = ['P', 'I', 'F', 'A', 'X', 'Y'];
 
 // ---------- state ----------
-const S = { lang: 'en', tr: 'none', on: { P: 1, I: 1, F: 1, A: 1, X: 1, Y: 1 }, vocab: false, last: {}, ptc: 'bi', inf: 'dot' };
+const S = { lang: 'en', tr: 'none', on: { P: 1, I: 1, F: 1, A: 1, X: 1, Y: 1 }, vocab: false, last: {}, ptc: 'bi', inf: 'dot', bm: null };
 try { Object.assign(S, JSON.parse(localStorage.getItem('anagnosis') || '{}')); } catch (e) {}
 const save = () => { try { localStorage.setItem('anagnosis', JSON.stringify(S)); } catch (e) {} };
 const cache = {};
@@ -110,8 +110,11 @@ function setLang(l) {
 function library() {
   D = null; text = null;
   document.title = 'Anagnosis: Greek reader';
+  bmButton();
+  const bx = S.bm && TEXTS.find(a => a.id === S.bm.id && ready(a));
   $('app').innerHTML = `<div class="wrap">
     <section class="hero"><h1>${esc(t().lib_h)}</h1><p>${esc(t().lib_p)}</p></section>
+    ${bx ? `<a class="cont" id="cont" href="${href(bx, S.bm.book, S.bm.page)}">${BM_SVG}<span><b>${esc(t().bm_cont)}</b><br>${esc(bx.author[S.lang])}, ${esc(bx.title[S.lang])} ${esc(bmWhere(S.bm))}</span></a>` : ''}
     <div class="shelf">${TEXTS.map(x => `<a class="book${ready(x) ? '' : ' soon'}" href="${href(x, 1)}">
       <div class="gr">${esc(x.gr)}</div>
       <div class="au">${esc(x.author[S.lang])} · ${esc(x.title[S.lang])}</div>
@@ -131,7 +134,7 @@ async function reader(id, b, pg) {
   const file = x.books ? x.books[b] : x.file;
   if (!cache[file]) {
     $('app').innerHTML = `<p class="wrap empty">${esc(t().loading)}</p>`;
-    try { cache[file] = await (await fetch(file + '?v=20261128k')).json(); }
+    try { cache[file] = await (await fetch(file + '?v=20261128l')).json(); }
     catch (e) { $('app').innerHTML = `<p class="wrap empty">${esc(t().failed)}</p>`; return; }
   }
   D = cache[file]; text = x; book = b;
@@ -162,6 +165,43 @@ async function reader(id, b, pg) {
   $('tr').value = (S.tr === 'ru' && !hasRu) || (S.tr === 'en' && !hasEn) || (S.tr === 'ka' && !hasKa) ? 'none' : S.tr;
   renderText();
   document.querySelectorAll('.pages [aria-current=true]').forEach(c => c.scrollIntoView({ inline: 'center', block: 'nearest' }));
+  bmButton();
+  if (bmJump) { bmJump = false; if (bmHere()) setTimeout(bmScroll, 60); }
+}
+
+// ---------- bookmark ----------
+// One bookmark, kept in the browser (localStorage): S.bm = { id, book, page, key }.
+// The red ribbon saves the section at the top of the screen; opening the site returns there.
+const BM_SVG = '<svg viewBox="0 0 24 36" aria-hidden="true"><path d="M1 0h22v34l-11-8-11 8z"/></svg>';
+let bmJump = false, toastT = 0;
+const bmWhere = m => { const x = TEXTS.find(a => a.id === m.id); return x && x.books ? `${ROMAN[m.book]}.${m.key}` : m.key; };
+const bmHere = () => !!(S.bm && text && S.bm.id === text.id && (S.bm.book || null) === (book || null) && String(S.bm.page) === String(page));
+const barBottom = () => { const b = document.querySelector('.bar'); return b && getComputedStyle(b).position === 'sticky' ? Math.max(0, b.getBoundingClientRect().bottom) : 0; };
+function bmButton() {
+  const b = $('bm'); b.hidden = !text; document.body.classList.toggle('reading', !!text);
+  b.setAttribute('aria-pressed', bmHere()); b.title = t().bm; b.setAttribute('aria-label', t().bm);
+  document.querySelectorAll('.sec.bmk').forEach(e => e.classList.remove('bmk'));
+  if (bmHere()) { const e = $('s' + S.bm.key); if (e) e.classList.add('bmk'); }
+}
+function bmScroll() {
+  const e = S.bm && $('s' + S.bm.key);
+  if (e) {
+    const b = document.querySelector('.bar'), stuck = b && getComputedStyle(b).position === 'sticky' ? b.offsetHeight : 0;
+    window.scrollTo({ top: Math.max(0, e.getBoundingClientRect().top + window.scrollY - stuck - 10) });
+  }
+}
+function toast(msg) {
+  const e = $('toast'); e.textContent = msg; e.classList.add('on');
+  clearTimeout(toastT); toastT = setTimeout(() => e.classList.remove('on'), 2200);
+}
+function bmToggle() {
+  if (!text) return;
+  const top = barBottom() + 28, secs = [...document.querySelectorAll('#text .sec')];
+  const cur = secs.find(e => e.getBoundingClientRect().bottom > top) || secs[secs.length - 1];
+  if (!cur) return;
+  const key = cur.id.slice(1);
+  if (bmHere() && S.bm.key === key) { S.bm = null; save(); bmButton(); toast(t().bm_del); return; }
+  S.bm = { id: text.id, book, page, key }; save(); bmButton(); toast(t().bm_set(bmWhere(S.bm)));
 }
 
 function sectionHTML(txt, rng) {
@@ -203,6 +243,7 @@ function renderText() {
       ${i > 0 ? `<a class="btn" href="${href(text, book, D.pages[i - 1][0])}">${esc(t().prev)} ${D.pages[i - 1][0]}</a>` : '<span></span>'}
       ${i < D.pages.length - 1 ? `<a class="btn" href="${href(text, book, D.pages[i + 1][0])}">${D.pages[i + 1][0]} ${esc(t().next)}</a>` : ''}
     </div><p class="legend">${esc(t().legend[text.id] || '')}</p>`;
+  if (bmHere()) { const e = $('s' + S.bm.key); if (e) e.classList.add('bmk'); }
 }
 
 // ---------- syntactic constructions ----------
@@ -330,7 +371,7 @@ function show(id) {
   if (sel) sel.classList.add('sel');
 }
 let NOUNS = null, parOpen = false, curNoun = null;
-const loadNouns = () => NOUNS || (NOUNS = fetch('data/nouns.json?v=20261128k').then(r => r.json()).catch(() => ({})));
+const loadNouns = () => NOUNS || (NOUNS = fetch('data/nouns.json?v=20261128l').then(r => r.json()).catch(() => ({})));
 const plainAcc = f => (f || '').normalize('NFD').replace(/\u0300/g, '\u0301').normalize('NFC').toLowerCase();
 function nounInfo(lem, form) {
   loadNouns().then(N => {
@@ -385,6 +426,8 @@ $('app').addEventListener('change', e => { if (e.target.id === 'tr') { S.tr = e.
   if (e.target.id === 'mptc' || e.target.id === 'minf') { const k = e.target.id.slice(1); $('text').classList.remove(k + '-' + S[k]); S[k] = e.target.value; save(); $('text').classList.add(k + '-' + S[k]); } });
 $('app').addEventListener('keydown', e => { if (e.key === 'Enter') { const w = e.target.closest('.w'); if (w) show(+w.dataset.i); } });
 $('close').addEventListener('click', hide);
+$('bm').addEventListener('click', bmToggle);
+$('app').addEventListener('click', e => { if (e.target.closest('#cont')) bmJump = true; });
 $('cxt').addEventListener('click', () => {
   cxOn = !cxOn; const X = CXT[S.lang] || CXT.en;
   $('cxt').textContent = cxOn ? X.hide : X.show; cxMark(cxOn);
@@ -406,5 +449,9 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft' && i > 0) location.hash = href(text, book, D.pages[i - 1][0]);
 });
 window.addEventListener('hashchange', () => { hide(); sameLem = null; route(); window.scrollTo({ top: 0 }); });
+// opening the site with no address goes straight to the bookmark
+if (!location.hash.slice(1) && S.bm && TEXTS.find(a => a.id === S.bm.id && ready(a))) {
+  bmJump = true; history.replaceState(null, '', href(TEXTS.find(a => a.id === S.bm.id), S.bm.book, S.bm.page));
+}
 setLang(S.lang);
 }
