@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Inject Georgian glosses (tools/gloss_ka.json) and Russian gloss corrections
-(tools/gloss_ru_fixes.json) into the lemma tables of data/*.json.
+"""Inject Georgian glosses (tools/gloss_ka.json), Russian gloss corrections
+(tools/gloss_ru_fixes.json) and English gloss corrections (tools/gloss_en_fixes.json)
+into the lemma tables of data/*.json. Also shows GLAUx's gap marker "G?" as "[…]".
 
 L entry: [lemma, display, pos, glossEN, glossRU, count, glossKA]
 Run after export_site.py:  python3 tools/apply_glosses.py
@@ -9,12 +10,22 @@ import json, glob, os
 here = os.path.dirname(os.path.abspath(__file__))
 ka = json.load(open(os.path.join(here, 'gloss_ka.json'), encoding='utf-8'))
 ru = json.load(open(os.path.join(here, 'gloss_ru_fixes.json'), encoding='utf-8'))
+en = json.load(open(os.path.join(here, 'gloss_en_fixes.json'), encoding='utf-8'))
 for f in sorted(glob.glob(os.path.join(here, '..', 'data', '*.json'))):
     d = json.load(open(f, encoding='utf-8'))
     if 'L' not in d:
         continue
     nka = nru = 0
+    for w in d['W']:
+        if w[0] == 'G?':
+            w[0] = '[…]'
+    for pg in d['pages']:
+        for sec in pg[1]:
+            if 'G?' in sec[1]:
+                sec[1] = sec[1].replace('G?', '[…]')
     for l in d['L']:
+        if l[0] in en:
+            l[3] = en[l[0]]
         if l[0] in ru and l[4] != ru[l[0]]:
             l[4] = ru[l[0]]; nru += 1
         g = ka.get(l[0], '')

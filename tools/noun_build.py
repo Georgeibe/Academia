@@ -4,7 +4,7 @@ from gen import *
 nouns={}
 for f in sorted(glob.glob('/home/claude/academia/data/*.json')):
     d=json.load(open(f))
-    for l in d['L']:
+    for l in d.get('L',[]):
         if l[2]=='noun': nouns[l[0]]=l[1]
 ART={'ὁ':'m','ἡ':'f','τό':'n','οἱ':'m','αἱ':'f','τά':'n','ὁ/ἡ':'c'}
 out={}; stats=collections.Counter(); mism=[]
