@@ -131,7 +131,7 @@ async function reader(id, b, pg) {
   const file = x.books ? x.books[b] : x.file;
   if (!cache[file]) {
     $('app').innerHTML = `<p class="wrap empty">${esc(t().loading)}</p>`;
-    try { cache[file] = await (await fetch(file + '?v=20261128j')).json(); }
+    try { cache[file] = await (await fetch(file + '?v=20261128k')).json(); }
     catch (e) { $('app').innerHTML = `<p class="wrap empty">${esc(t().failed)}</p>`; return; }
   }
   D = cache[file]; text = x; book = b;
@@ -306,8 +306,11 @@ function cxShow(id) {
   cxMark(cxOn && cxCur.length);
 }
 
-// gloss in the interface language: L = [lemma, display, pos, en, ru, count, ka]
-const gloss = l => S.lang === 'ru' ? (l[4] || l[3]) : S.lang === 'ka' ? (l[6] || l[3]) : l[3];
+// Word meanings follow the language of the chosen translation; with no translation shown
+// (or one this text lacks) they follow the interface language.
+// L = [lemma, display, pos, en, ru, count, ka]
+const glossLang = () => S.tr !== 'none' && D && D.tr && D.tr[S.tr] && Object.keys(D.tr[S.tr]).length ? S.tr : S.lang;
+const gloss = l => { const g = glossLang(); return g === 'ru' ? (l[4] || l[3]) : g === 'ka' ? (l[6] || l[3]) : l[3]; };
 
 // ---------- word card ----------
 function show(id) {
@@ -327,7 +330,7 @@ function show(id) {
   if (sel) sel.classList.add('sel');
 }
 let NOUNS = null, parOpen = false, curNoun = null;
-const loadNouns = () => NOUNS || (NOUNS = fetch('data/nouns.json?v=20261128j').then(r => r.json()).catch(() => ({})));
+const loadNouns = () => NOUNS || (NOUNS = fetch('data/nouns.json?v=20261128k').then(r => r.json()).catch(() => ({})));
 const plainAcc = f => (f || '').normalize('NFD').replace(/\u0300/g, '\u0301').normalize('NFC').toLowerCase();
 function nounInfo(lem, form) {
   loadNouns().then(N => {
@@ -378,7 +381,7 @@ $('app').addEventListener('click', e => {
   const w = e.target.closest('.w');
   if (w) show(+w.dataset.i);
 });
-$('app').addEventListener('change', e => { if (e.target.id === 'tr') { S.tr = e.target.value; save(); renderText(); }
+$('app').addEventListener('change', e => { if (e.target.id === 'tr') { S.tr = e.target.value; save(); hide(); renderText(); }
   if (e.target.id === 'mptc' || e.target.id === 'minf') { const k = e.target.id.slice(1); $('text').classList.remove(k + '-' + S[k]); S[k] = e.target.value; save(); $('text').classList.add(k + '-' + S[k]); } });
 $('app').addEventListener('keydown', e => { if (e.key === 'Enter') { const w = e.target.closest('.w'); if (w) show(+w.dataset.i); } });
 $('close').addEventListener('click', hide);
