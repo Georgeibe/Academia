@@ -10,7 +10,8 @@ const TEXTS = [
     ruLabel: { en: 'Russian (experimental)', ru: 'Русский (экспериментальный)', ka: 'რუსული (ექსპერიმენტული)' },
     kaLabel: { en: 'Georgian (experimental)', ru: 'Грузинский (экспериментальный)', ka: 'ქართული (ექსპერიმენტული)' }, unit: { en: 'Chapter', ru: 'Глава', ka: 'თავი' },
     books: { 1: 'data/anabasis-1.json', 2: 'data/anabasis-2.json', 3: 'data/anabasis-3.json', 4: 'data/anabasis-4.json', 5: 'data/anabasis-5.json', 6: 'data/anabasis-6.json', 7: 'data/anabasis-7.json' }, nbooks: 7 },
-  { id: 'cyropaedia', gr: 'Κύρου Παιδεία', title: { en: 'Cyropaedia', ru: 'Киропедия', ka: 'კიროპედია' },
+  { id: 'cyropaedia', gr: 'Κύρου Παιδεία',
+    ruLabel: { en: 'Russian — G. A. Yanchevetsky (1878)', ru: 'Русский — Г. А. Янчевецкий (1878)', ka: 'რუსული — გ. იანჩევეცკი (1878)' }, title: { en: 'Cyropaedia', ru: 'Киропедия', ka: 'კიროპედია' },
     author: { en: 'Xenophon', ru: 'Ксенофонт', ka: 'ქსენოფონტი' }, unit: { en: 'Chapter', ru: 'Глава', ka: 'თავი' },
     books: { 1: 'data/cyropaedia-1.json', 2: 'data/cyropaedia-2.json', 3: 'data/cyropaedia-3.json', 4: 'data/cyropaedia-4.json', 5: 'data/cyropaedia-5.json', 6: 'data/cyropaedia-6.json', 7: 'data/cyropaedia-7.json', 8: 'data/cyropaedia-8.json' }, nbooks: 8 },
 ];
@@ -34,7 +35,7 @@ const T = {
     legend: {
       apology: 'Text, lemmas and parsing: GLAUx corpus (A. Keersmaekers, CC BY-SA 4.0), based on the Perseus Digital Library. English translation: H. N. Fowler (1914), Perseus, CC BY-SA. Russian translation: M. S. Solovyov (1899–1903), public domain. Georgian translation: Levan Berdzenishvili, used with the translator’s permission. Meanings: Greek Study App dictionary (J. Jansen) and written for this site.',
       anabasis: 'Text: Perseus Digital Library. Lemmas and parsing: GLAUx corpus (A. Keersmaekers, CC BY-SA 4.0), corrected with V. Gorman\'s hand-checked treebank. English translation: C. L. Brownson (1922), Perseus, CC BY-SA. Russian translation: experimental, made for this site directly from the Greek; it may contain errors. Meanings: Greek Study App dictionary (J. Jansen) and written for this site. Georgian translation: experimental, made for this site directly from the Greek; it may contain errors.',
-      cyropaedia: 'Text: Perseus Digital Library. Lemmas and parsing: GLAUx corpus (A. Keersmaekers, CC BY-SA 4.0), produced automatically and not checked by hand, so occasional errors are possible. English translation: Walter Miller (1914), Perseus, CC BY-SA. Meanings: Greek Study App dictionary (J. Jansen) and written for this site.',
+      cyropaedia: 'Text: Perseus Digital Library. Lemmas and parsing: GLAUx corpus (A. Keersmaekers, CC BY-SA 4.0), produced automatically and not checked by hand, so occasional errors are possible. English translation: Walter Miller (1914), Perseus, CC BY-SA. Russian translation: G. A. Yanchevetsky (Kiev, 1878; public domain), transcribed from the scan on the Internet Archive in modern spelling, without his notes. Meanings: Greek Study App dictionary (J. Jansen) and written for this site.',
     },
     foot: 'Open project. Corrections are welcome on GitHub.',
   },
@@ -54,7 +55,7 @@ const T = {
     legend: {
       apology: 'Текст, леммы и разбор: корпус GLAUx (A. Keersmaekers, CC BY-SA 4.0) на основе Perseus Digital Library. Английский перевод: H. N. Fowler (1914), Perseus, CC BY-SA. Русский перевод: М. С. Соловьёв (1899–1903), общественное достояние. Грузинский перевод: Леван Бердзенишвили, публикуется с разрешения переводчика. Значения: словарь Greek Study App (J. Jansen) и составленные для этого сайта.',
       anabasis: 'Текст: Perseus Digital Library. Леммы и разбор: корпус GLAUx (A. Keersmaekers, CC BY-SA 4.0), исправленный по размеченному вручную корпусу В. Горман. Английский перевод: C. L. Brownson (1922), Perseus, CC BY-SA. Русский перевод: экспериментальный, выполнен для этого сайта непосредственно с греческого; возможны ошибки. Значения: словарь Greek Study App (J. Jansen) и составленные для этого сайта. Грузинский перевод: экспериментальный, сделан для этого сайта прямо с греческого; возможны ошибки.',
-      cyropaedia: 'Текст: Perseus Digital Library. Леммы и разбор: корпус GLAUx (A. Keersmaekers, CC BY-SA 4.0); разметка автоматическая и вручную не проверялась, поэтому возможны отдельные ошибки. Английский перевод: Walter Miller (1914), Perseus, CC BY-SA. Значения слов: словарь Greek Study App (J. Jansen) и написанные для этого сайта.',
+      cyropaedia: 'Текст: Perseus Digital Library. Леммы и разбор: корпус GLAUx (A. Keersmaekers, CC BY-SA 4.0); разметка автоматическая и вручную не проверялась, поэтому возможны отдельные ошибки. Английский перевод: Walter Miller (1914), Perseus, CC BY-SA. Русский перевод: Г. А. Янчевецкий (Киев, 1878; общественное достояние), переписан со скана Internet Archive в современной орфографии, без примечаний переводчика. Значения слов: словарь Greek Study App (J. Jansen) и написанные для этого сайта.',
     },
     foot: 'Открытый проект. Исправления приветствуются на GitHub.',
   },
@@ -74,7 +75,7 @@ const T = {
     legend: {
       apology: 'ტექსტი, ლემები და ანალიზი: კორპუსი GLAUx (A. Keersmaekers, CC BY-SA 4.0), Perseus Digital Library-ის საფუძველზე. ინგლისური თარგმანი: H. N. Fowler (1914), Perseus, CC BY-SA. რუსული თარგმანი: მ. ს. სოლოვიოვი (1899–1903), საზოგადოებრივი საკუთრება. ქართული თარგმანი: ლევან ბერძენიშვილი, ქვეყნდება მთარგმნელის ნებართვით. მნიშვნელობები: Greek Study App-ის ლექსიკონი (J. Jansen) და ამ საიტისთვის შედგენილი.',
       anabasis: 'ტექსტი: Perseus Digital Library. ლემები და ანალიზი: კორპუსი GLAUx (A. Keersmaekers, CC BY-SA 4.0), შესწორებული ვ. გორმანის ხელით შემოწმებული კორპუსით. ინგლისური თარგმანი: C. L. Brownson (1922), Perseus, CC BY-SA. რუსული თარგმანი: ექსპერიმენტული, შესრულებულია ამ საიტისთვის უშუალოდ ბერძნულიდან; შესაძლოა შეიცავდეს შეცდომებს. მნიშვნელობები: Greek Study App-ის ლექსიკონი (J. Jansen) და ამ საიტისთვის შედგენილი. ქართული თარგმანი: ექსპერიმენტული, ამ საიტისთვის პირდაპირ ბერძნულიდან შესრულებული; შესაძლებელია შეცდომები.',
-      cyropaedia: 'ტექსტი: Perseus Digital Library. ლემები და ანალიზი: კორპუსი GLAUx (A. Keersmaekers, CC BY-SA 4.0); ანალიზი ავტომატურია და ხელით არ შემოწმებულა, ამიტომ შესაძლებელია ცალკეული შეცდომები. ინგლისური თარგმანი: Walter Miller (1914), Perseus, CC BY-SA. სიტყვების მნიშვნელობები: Greek Study App-ის ლექსიკონი (J. Jansen) და ამ საიტისთვის დაწერილი.',
+      cyropaedia: 'ტექსტი: Perseus Digital Library. ლემები და ანალიზი: კორპუსი GLAUx (A. Keersmaekers, CC BY-SA 4.0); ანალიზი ავტომატურია და ხელით არ შემოწმებულა, ამიტომ შესაძლებელია ცალკეული შეცდომები. ინგლისური თარგმანი: Walter Miller (1914), Perseus, CC BY-SA. რუსული თარგმანი: გ. ა. იანჩევეცკი (კიევი, 1878; საზოგადოებრივი საკუთრება), Internet Archive-ის სკანიდან გადაწერილი თანამედროვე ორთოგრაფიით, მთარგმნელის შენიშვნების გარეშე. სიტყვების მნიშვნელობები: Greek Study App-ის ლექსიკონი (J. Jansen) და ამ საიტისთვის დაწერილი.',
     },
     foot: 'ღია პროექტი. შესწორებებს სიამოვნებით მივიღებთ GitHub-ზე.',
   },
@@ -140,7 +141,7 @@ async function reader(id, b, pg) {
   const file = x.books ? x.books[b] : x.file;
   if (!cache[file]) {
     $('app').innerHTML = `<p class="wrap empty">${esc(t().loading)}</p>`;
-    try { cache[file] = await (await fetch(file + '?v=20261128p')).json(); }
+    try { cache[file] = await (await fetch(file + '?v=20261128q')).json(); }
     catch (e) { $('app').innerHTML = `<p class="wrap empty">${esc(t().failed)}</p>`; return; }
   }
   D = cache[file]; text = x; book = b;
@@ -377,7 +378,7 @@ function show(id) {
   if (sel) sel.classList.add('sel');
 }
 let NOUNS = null, parOpen = false, curNoun = null;
-const loadNouns = () => NOUNS || (NOUNS = fetch('data/nouns.json?v=20261128p').then(r => r.json()).catch(() => ({})));
+const loadNouns = () => NOUNS || (NOUNS = fetch('data/nouns.json?v=20261128q').then(r => r.json()).catch(() => ({})));
 const plainAcc = f => (f || '').normalize('NFD').replace(/\u0300/g, '\u0301').normalize('NFC').toLowerCase();
 function nounInfo(lem, form) {
   loadNouns().then(N => {
